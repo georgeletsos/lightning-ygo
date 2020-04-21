@@ -52,8 +52,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$bg-modal: #112233;
 $blue: #3c8eb4;
+$dark-blue: #112233;
 $yellow: #ffcc00;
 
 .l-nav {
@@ -94,10 +94,10 @@ $yellow: #ffcc00;
       &.show {
         .l-nav-item {
           border-color: $yellow;
-          border-bottom-color: $bg-modal;
+          border-bottom-color: $dark-blue;
 
           span {
-            color: $bg-modal;
+            color: $dark-blue;
             background-color: $yellow;
           }
         }
