@@ -1356,33 +1356,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$bg-main: #0b182f;
-$border-main: #004e9d;
-$bg-btn: #06235a;
-$border-btn: #75d9ee;
-$bg-btn-active: #00c5ff;
-$border-btn-active: #f4fbfd;
-$bg-modal: #112233;
-$bg-trash: #830000;
-
-$bg-scrollbar: #2181ff;
-$black: #000000;
-$blue: #3c8eb4;
-$gray: #4a5976;
+$dark-blue-100: #004e9d;
+$dark-blue-200: #06235a;
+$dark-blue-300: #0b182f;
+$gray-100: #f4fbfd;
+$gray-200: #4a5976;
+$light-blue-100: #75d9ee;
+$light-blue-200: #00c5ff;
+$red: #830000;
 $white: #ffffff;
 
 #card-catalog {
-  background: $bg-main;
-  border-left: 2px solid $border-main;
-  border-right: 2px solid $border-main;
+  background-color: $dark-blue-300;
+  border-left: 2px solid $dark-blue-100;
+  border-right: 2px solid $dark-blue-100;
 
   .l-btn {
     display: flex;
     align-items: center;
-    background: $bg-btn;
+    background-color: $dark-blue-200;
     border-width: 2px;
     border-style: solid;
-    border-color: $border-btn;
+    border-color: $light-blue-100;
     outline: none;
     cursor: pointer;
     padding: 0.25rem 0.375rem;
@@ -1399,8 +1394,8 @@ $white: #ffffff;
     }
 
     &.active {
-      background: $bg-btn-active;
-      border-color: $border-btn-active;
+      background-color: $light-blue-200;
+      border-color: $gray-100;
     }
 
     * {
@@ -1410,7 +1405,7 @@ $white: #ffffff;
     input {
       padding: 0;
       color: $white;
-      background: inherit;
+      background-color: inherit;
     }
 
     &.l-icon {
@@ -1476,11 +1471,11 @@ $white: #ffffff;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     border: 0;
-    border-top: 1px dashed $gray;
+    border-top: 1px dashed $gray-200;
   }
 
   .l-trash {
-    background: $bg-trash;
+    background-color: $red;
   }
 }
 

@@ -21,9 +21,8 @@ export default {
 </script>
 
 <style lang="scss">
-$bg-scrollbar: #2181ff;
 $black: #000000;
-$white: #ffffff;
+$blue: #2181ff;
 
 .h-100vh {
   height: 100vh;
@@ -44,18 +43,18 @@ $white: #ffffff;
   height: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: $bg-scrollbar;
+  background-color: $blue;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background-color: transparent;
 }
 ::-webkit-scrollbar-track {
   &:hover {
-    background: $black;
+    background-color: $black;
   }
 
   &:active {
-    background: $black;
+    background-color: $black;
   }
 }
 </style>

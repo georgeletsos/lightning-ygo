@@ -88,9 +88,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$bg-modal: #112233;
-$bg-trash: #830000;
-$gray: #4a5976;
+$black-opacity-50: rgba(0, 0, 0, 0.5);
+$dark-blue: #112233;
+$gray: #dee2e6;
 $white: #ffffff;
 
 .l-modal-backdrop {
@@ -100,7 +100,7 @@ $white: #ffffff;
   z-index: 1040;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: $black-opacity-50;
 }
 
 .l-modal {
@@ -120,7 +120,7 @@ $white: #ffffff;
     flex-direction: column;
     width: 100%;
     pointer-events: auto;
-    background: $bg-modal;
+    background-color: $dark-blue;
     color: $white;
     border: 1px solid $white;
     border-radius: 0;
@@ -129,7 +129,7 @@ $white: #ffffff;
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      border-bottom: 1px solid #dee2e6;
+      border-bottom: 1px solid $gray;
       font-size: 1.2rem;
     }
 
@@ -144,7 +144,7 @@ $white: #ffffff;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      border-top: 1px solid #dee2e6;
+      border-top: 1px solid $gray;
       padding: 0.5rem;
     }
   }

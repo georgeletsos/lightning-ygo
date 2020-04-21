@@ -62,7 +62,7 @@ $yellow: #ffcc00;
 
   svg {
     color: $gray;
-    background: $black;
+    background-color: $black;
     border-radius: 50%;
 
     &.checked {
