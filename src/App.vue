@@ -1,8 +1,11 @@
 <template>
-  <div id="app" class="h-100vh overflow-hidden">
-    <div class="row no-gutters h-100">
+  <div id="app">
+    <div class="row h-100">
       <div class="col-12 h-100">
-        <CardCatalog />
+        <div id="card-catalog" class="p-2 h-100">
+          <CardCatalogFilters />
+          <CardCatalog />
+        </div>
       </div>
     </div>
   </div>
@@ -10,11 +13,13 @@
 
 <script>
 // import CardDisplay from "@/components/CardDisplay.vue";
+import CardCatalogFilters from "@/components/CardCatalogFilters.vue";
 import CardCatalog from "@/components/CardCatalog.vue";
 
 export default {
   components: {
     // CardDisplay,
+    CardCatalogFilters,
     CardCatalog
   }
 };
@@ -23,11 +28,15 @@ export default {
 <style lang="scss">
 $black: #000000;
 $blue: #2181ff;
+$dark-blue-100: #004e9d;
+$dark-blue-200: #0b182f;
 
-.h-100vh {
+#app {
   height: 100vh;
+  overflow: hidden;
 }
 
+// Used in some components
 .l-gutters {
   margin-left: -0.25rem;
   margin-right: -0.25rem;
@@ -36,6 +45,12 @@ $blue: #2181ff;
   [class*="col-"] {
     padding: 0 0.25rem;
   }
+}
+
+#card-catalog {
+  background-color: $dark-blue-200;
+  border-left: 2px solid $dark-blue-100;
+  border-right: 2px solid $dark-blue-100;
 }
 
 ::-webkit-scrollbar {
