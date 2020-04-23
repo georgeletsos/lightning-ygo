@@ -10,7 +10,7 @@
     <font-awesome-icon
       class="mr-1"
       :class="{ checked: checked }"
-      :icon="checked ? faCheckCircle : faCircle"
+      :icon="checked ? faIcons.faCheckCircle : faIcons.faCircle"
       size="lg"
     />
     <slot></slot>
@@ -37,11 +37,11 @@ export default {
   },
 
   computed: {
-    faCircle() {
-      return faCircle;
-    },
-    faCheckCircle() {
-      return faCheckCircle;
+    faIcons() {
+      return {
+        faCircle,
+        faCheckCircle
+      };
     }
   }
 };
