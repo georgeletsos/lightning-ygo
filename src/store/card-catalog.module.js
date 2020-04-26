@@ -2,8 +2,11 @@ import { CardsService } from "@/common/api.service.js";
 import {
   FETCH_CATALOG_CARDS,
   FETCH_DISPLAY_CARDS,
+  FETCH_PREV_DISPLAY_CARD,
+  FETCH_NEXT_DISPLAY_CARD,
   RESET_CATALOG_CARDS,
-  RESET_DISPLAY_CARDS
+  RESET_DISPLAY_CARDS,
+  CHANGE_DISPLAY_CARD
 } from "./actions.type";
 import { SET_CATALOG_CARDS, SET_DISPLAY_CARDS } from "./mutations.type";
 
@@ -63,6 +66,42 @@ const actions = {
     });
 
     commit(SET_DISPLAY_CARDS, displayCards);
+  },
+  [FETCH_PREV_DISPLAY_CARD]({ dispatch, state }, currentDisplayCard) {
+    const currentDisplayCardIndex = state.displayCards.findIndex(
+      displayCard => displayCard.name === currentDisplayCard.name
+    );
+
+    if (currentDisplayCardIndex === -1) {
+      return;
+    }
+
+    let displayCard;
+    if (currentDisplayCardIndex === 0) {
+      displayCard = state.displayCards[state.displayCards.length - 1];
+    } else {
+      displayCard = state.displayCards[currentDisplayCardIndex - 1];
+    }
+
+    dispatch(CHANGE_DISPLAY_CARD, displayCard);
+  },
+  [FETCH_NEXT_DISPLAY_CARD]({ dispatch, state }, currentDisplayCard) {
+    const currentDisplayCardIndex = state.displayCards.findIndex(
+      displayCard => displayCard.name === currentDisplayCard.name
+    );
+
+    if (currentDisplayCardIndex === -1) {
+      return;
+    }
+
+    let displayCard;
+    if (currentDisplayCardIndex === state.displayCards.length - 1) {
+      displayCard = state.displayCards[0];
+    } else {
+      displayCard = state.displayCards[currentDisplayCardIndex + 1];
+    }
+
+    dispatch(CHANGE_DISPLAY_CARD, displayCard);
   },
   [RESET_CATALOG_CARDS]({ commit }) {
     commit(SET_CATALOG_CARDS, []);

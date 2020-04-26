@@ -1,6 +1,21 @@
 <template>
   <div v-if="Object.keys(displayCard).length > 0" class="h-100">
     <div id="l-card-image">
+      <font-awesome-icon
+        v-if="displayCards.length > 1"
+        class="l-prev animated infinite bounceLeft faster"
+        :icon="faIcons.faCaretLeft"
+        size="3x"
+        @click="fetchPrevDisplayCard(displayCard)"
+      />
+      <font-awesome-icon
+        v-if="displayCards.length > 1"
+        class="l-next animated infinite bounceRight faster"
+        :icon="faIcons.faCaretRight"
+        size="3x"
+        @click="fetchNextDisplayCard(displayCard)"
+      />
+
       <transition :enter-active-class="enterActiveClass" mode="out-in">
         <img
           v-if="showArtImage"
@@ -89,7 +104,16 @@
                   .join("/")
               }}]
             </div>
-            <div ref="cardText" class="l-card-text">{{ displayCard.text }}</div>
+            <div
+              ref="cardText"
+              class="l-card-text"
+              :class="{
+                'l-full-height':
+                  isSpellCard(displayCard) || isTrapCard(displayCard)
+              }"
+            >
+              {{ displayCard.text }}
+            </div>
             <div v-if="isMonsterCard(displayCard)" class="l-monster-stats">
               {{ `ATK/${displayCard.atk} DEF/${displayCard.def}` }}
             </div>
@@ -101,7 +125,13 @@
 </template>
 
 <script>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { mapGetters } from "vuex";
+import {
+  FETCH_PREV_DISPLAY_CARD,
+  FETCH_NEXT_DISPLAY_CARD
+} from "@/store/actions.type";
 import {
   isMonsterCard,
   isSpellCard,
@@ -110,7 +140,17 @@ import {
 } from "@/common/utilities";
 
 export default {
+  components: {
+    FontAwesomeIcon
+  },
+
   computed: {
+    faIcons() {
+      return {
+        faCaretLeft,
+        faCaretRight
+      };
+    },
     icons() {
       return {
         spellIcon: require("@/assets/card_attributes/card_attribute_spell.png"),
@@ -167,7 +207,7 @@ export default {
 
       return this.$options.filters.capitalize(displayCardMonsterType);
     },
-    ...mapGetters(["displayCard"])
+    ...mapGetters(["displayCard", "displayCards"])
   },
 
   watch: {
@@ -221,6 +261,12 @@ export default {
           return this.icons.counterTrapIcon;
       }
     },
+    fetchPrevDisplayCard(displayCard) {
+      this.$store.dispatch(FETCH_PREV_DISPLAY_CARD, displayCard);
+    },
+    fetchNextDisplayCard(displayCard) {
+      this.$store.dispatch(FETCH_NEXT_DISPLAY_CARD, displayCard);
+    },
     isMonsterCard,
     isSpellCard,
     isTrapCard,
@@ -250,6 +296,11 @@ $white: #ffffff;
 #l-card-image {
   height: 40%;
   overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  user-select: none;
 
   img {
     max-height: 100%;
@@ -265,6 +316,22 @@ $white: #ffffff;
       cursor: zoom-out;
     }
   }
+
+  .l-prev,
+  .l-next {
+    cursor: pointer;
+    color: $white;
+  }
+
+  .l-prev {
+    position: absolute;
+    left: 5px;
+  }
+
+  .l-next {
+    position: absolute;
+    right: 5px;
+  }
 }
 
 .zoomIn {
@@ -273,6 +340,14 @@ $white: #ffffff;
 
 .zoomOut {
   animation-name: zoomOut;
+}
+
+.bounceLeft {
+  animation-name: bounceLeft;
+}
+
+.bounceRight {
+  animation-name: bounceRight;
 }
 
 @keyframes zoomIn {
@@ -290,6 +365,28 @@ $white: #ffffff;
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes bounceLeft {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-5px);
+  }
+}
+
+@keyframes bounceRight {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(5px);
   }
 }
 
@@ -352,6 +449,10 @@ $white: #ffffff;
     height: calc(100% - (24px + 40px));
     overflow-y: scroll;
     white-space: pre-line;
+
+    &.l-full-height {
+      height: 100%;
+    }
   }
 
   .l-monster-stats {
