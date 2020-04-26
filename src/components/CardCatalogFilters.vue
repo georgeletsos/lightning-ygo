@@ -21,7 +21,6 @@
             @change="fetchDisplayCards"
           />
           <img
-            loading="lazy"
             class="img-fluid mr-1 l-card-frame"
             :src="displayFilter.src"
             :alt="displayFilter.alt"
