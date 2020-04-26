@@ -18,17 +18,21 @@
         v-show="show"
         @click.self="$emit('outsideClick')"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div
+          class="modal-dialog modal-dialog-centered"
+          :class="{ 'l-full-screen-modal': fullscreen }"
+          role="document"
+        >
           <div class="l-modal-content">
-            <div class="l-modal-header">
+            <div v-if="header" class="l-modal-header">
               <slot name="header">Default Header</slot>
             </div>
 
-            <div class="l-modal-body">
+            <div class="l-modal-body" :class="{ 'p-0': !bodyPadding }">
               <slot name="body">Default Body</slot>
             </div>
 
-            <div class="l-modal-footer">
+            <div v-if="footer" class="l-modal-footer">
               <slot name="footer">Default Footer</slot>
             </div>
           </div>
@@ -42,7 +46,11 @@
 export default {
   props: {
     name: { type: String },
-    show: { default: false, type: Boolean }
+    show: { default: false, type: Boolean },
+    header: { default: true, type: Boolean },
+    footer: { default: true, type: Boolean },
+    bodyPadding: { default: true, type: Boolean },
+    fullscreen: { default: false, type: Boolean }
   },
 
   data() {
@@ -103,6 +111,14 @@ $white: #ffffff;
   background-color: $black-opacity-50;
 }
 
+.l-full-screen-modal {
+  height: calc(100% - 1rem);
+
+  @media (min-width: 576px) {
+    height: calc(100% - 3rem);
+  }
+}
+
 .l-modal {
   position: fixed;
   top: 0;
@@ -119,6 +135,7 @@ $white: #ffffff;
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
     pointer-events: auto;
     background-color: $dark-blue;
     color: $white;
@@ -134,6 +151,7 @@ $white: #ffffff;
     }
 
     .l-modal-body {
+      height: 100%;
       position: relative;
       flex: 1 1 auto;
       padding: 0.5rem;

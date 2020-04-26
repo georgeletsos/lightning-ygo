@@ -1,40 +1,42 @@
 <template>
-  <!-- Card Catalog -->
-  <div id="catalog">
+  <div id="l-catalog">
     <div v-if="displayCards.length > 0" class="row no-gutters">
       <div v-for="card in displayCards" :key="card.name" class="col-2 p-1">
-        <div class="position-relative">
+        <!-- Without .prevent, click would run twice -->
+        <div
+          class="position-relative l-cursor-pointer"
+          @click.prevent="changeDisplayCard(card)"
+        >
           <img :src="card.image.big" :alt="card.name" class="img-fluid" />
           <img
-            v-if="card.cardType === 'monster'"
+            v-if="isMonsterCard(card)"
             class="img-fluid l-card-attr"
             :src="getMonsterAttributeIcon(card.attribute)"
             :alt="card.attribute"
           />
           <img
-            v-else-if="card.cardType === 'spell'"
-            class="img-fluid l-card-attr"
+            v-else-if="isSpellCard(card)"
+            class="img-fluid l-st-card-type"
             :src="icons.spellIcon"
             alt="spell"
           />
           <img
-            v-else-if="card.cardType === 'trap'"
-            class="img-fluid l-card-attr"
+            v-else-if="isTrapCard(card)"
+            class="img-fluid l-st-card-type"
             :src="icons.trapIcon"
             alt="trap"
           />
           <img
-            v-if="card.cardType === 'monster'"
+            v-if="isMonsterCard(card)"
             class="img-fluid l-monster-type"
             :src="getMonsterTypeIcon(card.monsterType)"
             :alt="card.monsterType"
           />
           <img
             v-else-if="
-              ['spell', 'trap'].includes(card.cardType) &&
-                card.types[0] !== 'normal'
+              (isSpellCard(card) || isTrapCard(card)) && !isStNormal(card)
             "
-            class="img-fluid l-monster-type"
+            class="img-fluid l-st-type"
             :src="getStTypeIcon(card.types[0])"
             :alt="card.types[0]"
           />
@@ -46,6 +48,13 @@
 
 <script>
 import { mapGetters } from "vuex";
+import { CHANGE_DISPLAY_CARD } from "@/store/actions.type";
+import {
+  isMonsterCard,
+  isSpellCard,
+  isTrapCard,
+  isStNormal
+} from "@/common/utilities";
 
 export default {
   computed: {
@@ -64,7 +73,7 @@ export default {
         earthAttrIcon: require("@/assets/card_attributes/card_attribute_earth.png"),
         fireAttrIcon: require("@/assets/card_attributes/card_attribute_fire.png"),
         lightAttrIcon: require("@/assets/card_attributes/card_attribute_light.png"),
-        waterAttrIcon: require("@/assets/card_attributes/card_attribute_wind.png"),
+        waterAttrIcon: require("@/assets/card_attributes/card_attribute_water.png"),
         windAttrIcon: require("@/assets/card_attributes/card_attribute_wind.png"),
         aquaTypeIcon: require("@/assets/monster_types/monster_type_aqua.png"),
         beastTypeIcon: require("@/assets/monster_types/monster_type_beast.png"),
@@ -178,30 +187,45 @@ export default {
         case "counter":
           return this.icons.counterTrapIcon;
       }
-    }
+    },
+    changeDisplayCard(displayCard) {
+      this.$store.dispatch(CHANGE_DISPLAY_CARD, displayCard);
+    },
+    isMonsterCard,
+    isSpellCard,
+    isTrapCard,
+    isStNormal
   }
 };
 </script>
 
 <style lang="scss" scoped>
-#catalog {
+.l-cursor-pointer {
+  cursor: pointer;
+}
+
+#l-catalog {
   // Correct Height is needed for the scroll
   height: calc(100% - 132px);
   overflow-y: scroll;
   margin-right: -6px; // 100% of scroll width
 
   .l-card-attr,
-  .l-monster-type {
+  .l-monster-type,
+  .l-st-card-type,
+  .l-st-type {
     height: 20px !important;
   }
 
-  .l-card-attr {
+  .l-card-attr,
+  .l-st-card-type {
     position: absolute;
     bottom: 1px;
     left: 1px;
   }
 
-  .l-monster-type {
+  .l-monster-type,
+  .l-st-type {
     position: absolute;
     bottom: 1px;
     right: 1px;
