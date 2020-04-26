@@ -89,7 +89,7 @@
                   .join("/")
               }}]
             </div>
-            <div class="l-card-text">{{ displayCard.text }}</div>
+            <div ref="cardText" class="l-card-text">{{ displayCard.text }}</div>
             <div v-if="isMonsterCard(displayCard)" class="l-monster-stats">
               {{ `ATK/${displayCard.atk} DEF/${displayCard.def}` }}
             </div>
@@ -168,6 +168,15 @@ export default {
       return this.$options.filters.capitalize(displayCardMonsterType);
     },
     ...mapGetters(["displayCard"])
+  },
+
+  watch: {
+    // When the display card changes, reset the card text scroll
+    displayCard() {
+      if (this.$refs.cardText) {
+        this.$refs.cardText.scrollTop = 0;
+      }
+    }
   },
 
   data() {
