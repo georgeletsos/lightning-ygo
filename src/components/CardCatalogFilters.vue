@@ -40,7 +40,7 @@
     </div>
 
     <!-- Search Filter -->
-    <form ref="form" @submit.prevent>
+    <form @submit.prevent>
       <div class="row l-gutters mb-2">
         <div class="col-3">
           <button
