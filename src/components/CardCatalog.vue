@@ -7,7 +7,12 @@
           class="position-relative l-cursor-pointer"
           @click.prevent="changeDisplayCard(card)"
         >
-          <img :src="card.image.big" :alt="card.name" class="img-fluid" />
+          <img
+            loading="lazy"
+            :src="card.image.big"
+            :alt="card.name"
+            class="img-fluid"
+          />
           <img
             v-if="isMonsterCard(card)"
             class="img-fluid l-card-attr"
