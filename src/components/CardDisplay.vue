@@ -49,25 +49,19 @@
             <hr />
             <div class="d-flex">
               <div v-if="isMonsterCard(displayCard)" class="l-monster-level">
-                <img
-                  class="img-fluid"
-                  src="@/assets/monster_level.png"
-                  alt="Level"
-                />{{ displayCard.level }}
+                <img class="img-fluid" :src="monsterLevelIcon" alt="Level" />{{
+                  displayCard.level
+                }}
               </div>
               <div v-else-if="isSpellCard(displayCard)" class="l-st-card-type">
-                <img
-                  class="img-fluid"
-                  src="@/assets/card_attributes/card_attribute_spell.png"
-                  alt="Card Type"
-                />{{ displayCard.cardType | capitalize }}
+                <img class="img-fluid" :src="spellIcon" alt="Card Type" />{{
+                  displayCard.cardType | capitalize
+                }}
               </div>
               <div v-else-if="isTrapCard(displayCard)" class="l-st-card-type">
-                <img
-                  class="img-fluid"
-                  src="@/assets/card_attributes/card_attribute_trap.png"
-                  alt="Card Type"
-                />{{ displayCard.cardType | capitalize }}
+                <img class="img-fluid" :src="trapIcon" alt="Card Type" />{{
+                  displayCard.cardType | capitalize
+                }}
               </div>
 
               <div v-if="isMonsterCard(displayCard)" class="l-monster-attr">
@@ -138,6 +132,13 @@ import {
   isTrapCard,
   isStNormal
 } from "@/common/utilities";
+import {
+  spellIcon,
+  trapIcon,
+  monsterLevelIcon,
+  getMonsterAttributeIcon,
+  getStTypeIcon
+} from "@/common/assets";
 
 export default {
   components: {
@@ -149,48 +150,6 @@ export default {
       return {
         faCaretLeft,
         faCaretRight
-      };
-    },
-    icons() {
-      return {
-        spellIcon: require("@/assets/card_attributes/card_attribute_spell.png"),
-        equipSpellIcon: require("@/assets/st_types/spell_type_equip.png"),
-        fieldSpellIcon: require("@/assets/st_types/spell_type_field.png"),
-        quickPlaySpellIcon: require("@/assets/st_types/spell_type_quick_play.png"),
-        ritualSpellIcon: require("@/assets/st_types/spell_type_ritual.png"),
-        continuousStIcon: require("@/assets/st_types/st_type_continuous.png"),
-        trapIcon: require("@/assets/card_attributes/card_attribute_trap.png"),
-        counterTrapIcon: require("@/assets/st_types/trap_type_counter.png"),
-        darkAttrIcon: require("@/assets/card_attributes/card_attribute_dark.png"),
-        divineAttrIcon: require("@/assets/card_attributes/card_attribute_divine.png"),
-        earthAttrIcon: require("@/assets/card_attributes/card_attribute_earth.png"),
-        fireAttrIcon: require("@/assets/card_attributes/card_attribute_fire.png"),
-        lightAttrIcon: require("@/assets/card_attributes/card_attribute_light.png"),
-        waterAttrIcon: require("@/assets/card_attributes/card_attribute_water.png"),
-        windAttrIcon: require("@/assets/card_attributes/card_attribute_wind.png"),
-        aquaTypeIcon: require("@/assets/monster_types/monster_type_aqua.png"),
-        beastTypeIcon: require("@/assets/monster_types/monster_type_beast.png"),
-        beastWarriorTypeIcon: require("@/assets/monster_types/monster_type_beast_warrior.png"),
-        dinosaurTypeIcon: require("@/assets/monster_types/monster_type_dinosaur.png"),
-        divineBeastTypeIcon: require("@/assets/monster_types/monster_type_divine_beast.png"),
-        dragonTypeIcon: require("@/assets/monster_types/monster_type_dragon.png"),
-        fairyTypeIcon: require("@/assets/monster_types/monster_type_fairy.png"),
-        fiendTypeIcon: require("@/assets/monster_types/monster_type_fiend.png"),
-        fishTypeIcon: require("@/assets/monster_types/monster_type_fish.png"),
-        insectTypeIcon: require("@/assets/monster_types/monster_type_insect.png"),
-        machineTypeIcon: require("@/assets/monster_types/monster_type_machine.png"),
-        plantTypeIcon: require("@/assets/monster_types/monster_type_plant.png"),
-        psychicTypeIcon: require("@/assets/monster_types/monster_type_psychic.png"),
-        pyroTypeIcon: require("@/assets/monster_types/monster_type_pyro.png"),
-        reptileTypeIcon: require("@/assets/monster_types/monster_type_reptile.png"),
-        rockTypeIcon: require("@/assets/monster_types/monster_type_rock.png"),
-        seaSerpentTypeIcon: require("@/assets/monster_types/monster_type_sea_serpent.png"),
-        spellcasterTypeIcon: require("@/assets/monster_types/monster_type_spellcaster.png"),
-        thunderTypeIcon: require("@/assets/monster_types/monster_type_thunder.png"),
-        warriorTypeIcon: require("@/assets/monster_types/monster_type_warrior.png"),
-        wingedBeastTypeIcon: require("@/assets/monster_types/monster_type_winged_beast.png"),
-        wyrmTypeIcon: require("@/assets/monster_types/monster_type_wyrm.png"),
-        zombieTypeIcon: require("@/assets/monster_types/monster_type_zombie.png")
       };
     },
     capitalizedDisplayCardMonsterType() {
@@ -207,6 +166,9 @@ export default {
 
       return this.$options.filters.capitalize(displayCardMonsterType);
     },
+    spellIcon: () => spellIcon,
+    trapIcon: () => trapIcon,
+    monsterLevelIcon: () => monsterLevelIcon,
     ...mapGetters(["displayCard", "displayCards"])
   },
 
@@ -226,41 +188,15 @@ export default {
     };
   },
 
+  filters: {
+    capitalize: function(value) {
+      if (!value) return "";
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    }
+  },
+
   methods: {
-    getMonsterAttributeIcon(attr) {
-      switch (attr) {
-        case "dark":
-          return this.icons.darkAttrIcon;
-        case "divine":
-          return this.icons.divineAttrIcon;
-        case "earth":
-          return this.icons.earthAttrIcon;
-        case "fire":
-          return this.icons.fireAttrIcon;
-        case "light":
-          return this.icons.lightAttrIcon;
-        case "water":
-          return this.icons.waterAttrIcon;
-        case "wind":
-          return this.icons.windAttrIcon;
-      }
-    },
-    getStTypeIcon(stType) {
-      switch (stType) {
-        case "equip":
-          return this.icons.equipSpellIcon;
-        case "field":
-          return this.icons.fieldSpellIcon;
-        case "quick-play":
-          return this.icons.quickPlaySpellIcon;
-        case "ritual":
-          return this.icons.ritualSpellIcon;
-        case "continuous":
-          return this.icons.continuousStIcon;
-        case "counter":
-          return this.icons.counterTrapIcon;
-      }
-    },
     fetchPrevDisplayCard(displayCard) {
       this.$store.dispatch(FETCH_PREV_DISPLAY_CARD, displayCard);
     },
@@ -270,15 +206,9 @@ export default {
     isMonsterCard,
     isSpellCard,
     isTrapCard,
-    isStNormal
-  },
-
-  filters: {
-    capitalize: function(value) {
-      if (!value) return "";
-      value = value.toString();
-      return value.charAt(0).toUpperCase() + value.slice(1);
-    }
+    isStNormal,
+    getMonsterAttributeIcon,
+    getStTypeIcon
   }
 };
 </script>
