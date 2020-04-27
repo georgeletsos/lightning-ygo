@@ -127,7 +127,7 @@
               <div class="l-filter-group-header">
                 <img
                   class="img-fluid mr-2 l-card-frame"
-                  src="@/assets/card_frames/card_frame_normal_small.png"
+                  :src="normalFrameIcon"
                   alt="Card Type"
                 />
                 <span>Card Type</span>
@@ -162,7 +162,7 @@
               <div class="l-filter-group-header">
                 <img
                   class="img-fluid mr-1 l-card-attr"
-                  src="@/assets/card_attributes/card_attribute_light.png"
+                  :src="lightAttrIcon"
                   alt="Attribute"
                 />
                 <span>Attribute</span>
@@ -199,7 +199,7 @@
               <div class="l-filter-group-header">
                 <img
                   class="img-fluid mr-1 l-monster-type"
-                  src="@/assets/monster_types/monster_type_spellcaster.png"
+                  :src="spellcasterTypeIcon"
                   alt="Type"
                 />
                 <span>Type</span>
@@ -233,7 +233,7 @@
               <div class="l-filter-group-header">
                 <img
                   class="img-fluid mr-1 l-monster-level"
-                  src="@/assets/monster_level.png"
+                  :src="monsterLevelIcon"
                   alt="Level"
                 />
                 <span>Level</span>
@@ -266,7 +266,7 @@
               <div class="l-filter-group-header">
                 <img
                   class="img-fluid mr-2 l-card-frame"
-                  src="@/assets/card_frames/card_frame_spell_small.png"
+                  :src="spellFrameIcon"
                   alt="Spell"
                 />
                 <span>Spell</span>
@@ -302,7 +302,7 @@
               <div class="l-filter-group-header">
                 <img
                   class="img-fluid mr-2 l-card-frame"
-                  src="@/assets/card_frames/card_frame_trap_small.png"
+                  :src="trapFrameIcon"
                   alt="Trap"
                 />
                 <span>Trap</span>
@@ -378,24 +378,33 @@ import {
   faSortAmountUp,
   faSortAmountDown
 } from "@fortawesome/free-solid-svg-icons";
-import Tabs from "@/components/Tabs.vue";
-import Tab from "@/components/Tab.vue";
-import FilterCheckbox from "@/components/FilterCheckbox.vue";
-import Modal from "@/components/Modal.vue";
 import {
   FETCH_CATALOG_CARDS,
   FETCH_DISPLAY_CARDS,
   RESET_CATALOG_CARDS,
   RESET_DISPLAY_CARDS
 } from "@/store/actions.type";
+import Tabs from "@/components/Tabs.vue";
+import Tab from "@/components/Tab.vue";
+import FilterCheckbox from "@/components/FilterCheckbox.vue";
+import Modal from "@/components/Modal.vue";
 import { debounce } from "lodash-es";
-import { cloneObject } from "@/common/utilities.js";
+import { cloneObject } from "@/common/utilities";
+import {
+  normalFrameIcon,
+  spellFrameIcon,
+  trapFrameIcon,
+  fusionFrameIcon,
+  lightAttrIcon,
+  spellcasterTypeIcon,
+  monsterLevelIcon
+} from "@/common/assets";
 
 const displayFilters = [
   {
     id: 1,
     active: false,
-    src: require("@/assets/card_frames/card_frame_normal_small.png"),
+    src: normalFrameIcon,
     alt: "Main Deck Monsters",
     text: "Monsters",
     cardType: "monster",
@@ -404,7 +413,7 @@ const displayFilters = [
   {
     id: 2,
     active: false,
-    src: require("@/assets/card_frames/card_frame_spell_small.png"),
+    src: spellFrameIcon,
     alt: "Spells",
     text: "Spells",
     cardType: "spell"
@@ -412,7 +421,7 @@ const displayFilters = [
   {
     id: 3,
     active: false,
-    src: require("@/assets/card_frames/card_frame_trap_small.png"),
+    src: trapFrameIcon,
     alt: "Traps",
     text: "Traps",
     cardType: "trap"
@@ -420,7 +429,7 @@ const displayFilters = [
   {
     id: 4,
     active: false,
-    src: require("@/assets/card_frames/card_frame_fusion_small.png"),
+    src: fusionFrameIcon,
     alt: "Extra Deck Monsters",
     text: "Extra Deck",
     cardType: "monster",
@@ -797,9 +806,9 @@ const sortOrderFilters = [
 export default {
   components: {
     FontAwesomeIcon,
+    Modal,
     Tabs,
     Tab,
-    Modal,
     FilterCheckbox
   },
 
@@ -871,7 +880,13 @@ export default {
         this.anyCheckedSpellFilters ||
         this.anyCheckedTrapFilters
       );
-    }
+    },
+    normalFrameIcon: () => normalFrameIcon,
+    spellFrameIcon: () => spellFrameIcon,
+    trapFrameIcon: () => trapFrameIcon,
+    lightAttrIcon: () => lightAttrIcon,
+    spellcasterTypeIcon: () => spellcasterTypeIcon,
+    monsterLevelIcon: () => monsterLevelIcon
   },
 
   data() {
