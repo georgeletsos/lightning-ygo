@@ -1158,21 +1158,16 @@ img {
     align-items: center;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
+  }
 
-    .l-card-frame {
-      margin-left: 0.12rem;
-    }
-
-    .l-card-attr,
-    .l-monster-type,
-    .l-monster-level {
-      margin-left: -0.12rem;
-    }
+  .l-card-frame {
+    margin-left: 4px;
   }
 
   .l-filter-group-body {
     display: flex;
     flex-wrap: wrap;
+    padding-left: 1px;
   }
 }
 
