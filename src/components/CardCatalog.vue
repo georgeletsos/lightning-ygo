@@ -1,5 +1,5 @@
 <template>
-  <div id="l-catalog">
+  <div ref="catalog" id="l-catalog">
     <div v-if="displayCards.length > 0" class="row no-gutters">
       <div v-for="card in displayCards" :key="card.name" class="col-2 p-1">
         <!-- Without .prevent, click would run twice -->
@@ -48,7 +48,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { CHANGE_DISPLAY_CARD } from "@/store/actions.type";
+import { FETCH_DISPLAY_CARDS, CHANGE_DISPLAY_CARD } from "@/store/actions.type";
 import {
   isMonsterCard,
   isSpellCard,
@@ -68,6 +68,14 @@ export default {
     spellIcon: () => spellIcon,
     trapIcon: () => trapIcon,
     ...mapGetters(["displayCards"])
+  },
+
+  created() {
+    this.$store.subscribeAction(action => {
+      if (action.type === FETCH_DISPLAY_CARDS) {
+        this.$refs.catalog.scrollTop = 0;
+      }
+    });
   },
 
   methods: {
