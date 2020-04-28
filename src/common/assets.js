@@ -1,3 +1,6 @@
+// Card Back
+export const cardBack = require("@/assets/card_back.jpg");
+
 // Card Frame Icons
 export const effectFrameIcon = require("@/assets/card_frames/card_frame_effect_small.png");
 export const fusionFrameIcon = require("@/assets/card_frames/card_frame_fusion_small.png");
