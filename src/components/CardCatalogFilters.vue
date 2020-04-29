@@ -260,6 +260,43 @@
                 >
               </div>
             </div>
+
+            <hr class="l-filter-group-hr" />
+
+            <div class="l-filter-group">
+              <div class="l-filter-group-header">
+                <img
+                  class="img-fluid mr-1 l-monster-card-effect"
+                  :src="cardEffectIcon"
+                  alt="Card Effect"
+                />
+                <span>Card Effect</span>
+              </div>
+
+              <div class="l-filter-group-body">
+                <filter-checkbox
+                  v-for="(monsterCardEffectFilter,
+                  index) in monsterCardEffectFilters"
+                  :key="monsterCardEffectFilter.id"
+                  :id="monsterCardEffectFilter.id"
+                  v-model="monsterCardEffectFilter.checked"
+                  @input="
+                    resetSpellFilters();
+                    resetTrapFilters();
+                  "
+                  :class="{
+                    'mb-2':
+                      index <
+                      (monsterCardEffectFilters.length % 2 === 1
+                        ? monsterCardEffectFilters.length - 1
+                        : monsterCardEffectFilters.length - 2)
+                  }"
+                  ><span>{{
+                    monsterCardEffectFilter.text
+                  }}</span></filter-checkbox
+                >
+              </div>
+            </div>
           </tab>
           <tab title="Spells/Traps" id="spells-traps" class="l-tab-content">
             <div class="l-filter-group">
@@ -283,6 +320,7 @@
                     resetMonsterAttributeFilters();
                     resetMonsterTypeFilters();
                     resetMonsterLevelFilters();
+                    resetMonsterCardEffectFilters();
                   "
                   :class="{
                     'mb-2':
@@ -319,6 +357,7 @@
                     resetMonsterAttributeFilters();
                     resetMonsterTypeFilters();
                     resetMonsterLevelFilters();
+                    resetMonsterCardEffectFilters();
                   "
                   :class="{
                     'mb-2':
@@ -358,6 +397,7 @@
             resetMonsterAttributeFilters();
             resetMonsterTypeFilters();
             resetMonsterLevelFilters();
+            resetMonsterCardEffectFilters();
             resetSpellFilters();
             resetTrapFilters();
           "
@@ -397,7 +437,8 @@ import {
   fusionFrameIcon,
   lightAttrIcon,
   spellcasterTypeIcon,
-  monsterLevelIcon
+  monsterLevelIcon,
+  cardEffectIcon
 } from "@/common/assets";
 
 const displayFilters = [
@@ -737,6 +778,45 @@ const monsterLevelFilters = [
   }
 ];
 
+const monsterCardEffectFilters = [
+  {
+    id: "toon",
+    ability: "toon",
+    text: "Toon",
+    checked: false
+  },
+  {
+    id: "gemini",
+    ability: "gemini",
+    text: "Gemini",
+    checked: false
+  },
+  {
+    id: "union",
+    ability: "union",
+    text: "Union",
+    checked: false
+  },
+  {
+    id: "spirit",
+    ability: "spirit",
+    text: "Spirit",
+    checked: false
+  },
+  {
+    id: "tuner",
+    ability: "tuner",
+    text: "Tuner",
+    checked: false
+  },
+  {
+    id: "flip",
+    ability: "flip",
+    text: "Flip",
+    checked: false
+  }
+];
+
 const spellFilters = [
   {
     id: "normal-spell",
@@ -845,6 +925,9 @@ export default {
         ) ||
         this.monsterLevelFilters.some(
           monsterLevelFilter => monsterLevelFilter.checked
+        ) ||
+        this.monsterCardEffectFilters.some(
+          monsterCardEffectFilter => monsterCardEffectFilter.checked
         )
       );
     },
@@ -866,6 +949,11 @@ export default {
     checkedMonsterLevelFilters() {
       return this.monsterLevelFilters.filter(
         monsterLevelFilter => monsterLevelFilter.checked
+      );
+    },
+    checkedMonsterCardEffectFilters() {
+      return this.monsterCardEffectFilters.filter(
+        monsterCardEffectFilter => monsterCardEffectFilter.checked
       );
     },
     anyCheckedSpellFilters() {
@@ -892,7 +980,8 @@ export default {
     trapFrameIcon: () => trapFrameIcon,
     lightAttrIcon: () => lightAttrIcon,
     spellcasterTypeIcon: () => spellcasterTypeIcon,
-    monsterLevelIcon: () => monsterLevelIcon
+    monsterLevelIcon: () => monsterLevelIcon,
+    cardEffectIcon: () => cardEffectIcon
   },
 
   data() {
@@ -903,6 +992,7 @@ export default {
       monsterCardTypeFilters,
       monsterAttributeFilters,
       monsterTypeFilters,
+      monsterCardEffectFilters,
       monsterLevelFilters,
       spellFilters,
       trapFilters,
@@ -969,6 +1059,11 @@ export default {
         monsterLevelFilter.checked = false;
       });
     },
+    resetMonsterCardEffectFilters() {
+      this.monsterCardEffectFilters.forEach(monsterCardEffectFilter => {
+        monsterCardEffectFilter.checked = false;
+      });
+    },
     resetSpellFilters() {
       this.spellFilters.forEach(spellFilter => {
         spellFilter.checked = false;
@@ -985,6 +1080,7 @@ export default {
         monsterAttributeFilters: cloneObject(this.monsterAttributeFilters),
         monsterTypeFilters: cloneObject(this.monsterTypeFilters),
         monsterLevelFilters: cloneObject(this.monsterLevelFilters),
+        monsterCardEffectFilters: cloneObject(this.monsterCardEffectFilters),
         spellFilters: cloneObject(this.spellFilters),
         trapFilters: cloneObject(this.trapFilters)
       };
@@ -1001,6 +1097,9 @@ export default {
       );
       this.monsterLevelFilters = cloneObject(
         this.selectedDetailedFilters.monsterLevelFilters
+      );
+      this.monsterCardEffectFilters = cloneObject(
+        this.selectedDetailedFilters.monsterCardEffectFilters
       );
       this.spellFilters = cloneObject(
         this.selectedDetailedFilters.spellFilters
@@ -1019,9 +1118,14 @@ export default {
 
       if (this.anyCheckedMonsterFilters) {
         filters.cardTypes = ["monster"];
-        filters.types = this.checkedMonsterCardTypeFilters.map(
-          monsterCardTypeFilter => monsterCardTypeFilter.type
-        );
+        filters.types = this.checkedMonsterCardTypeFilters
+          .map(monsterCardTypeFilter => monsterCardTypeFilter.type)
+          .concat(
+            this.checkedMonsterCardEffectFilters.map(
+              checkedMonsterCardEffectFilter =>
+                checkedMonsterCardEffectFilter.ability
+            )
+          );
         filters.attributes = this.checkedMonsterAttributeFilters.map(
           monsterAttributeFilter => monsterAttributeFilter.attr
         );
@@ -1138,6 +1242,11 @@ img {
   &.l-card-attr,
   &.l-monster-type,
   &.l-monster-level {
+    height: 24px;
+  }
+
+  &.l-monster-card-effect {
+    width: 24px;
     height: 24px;
   }
 }
