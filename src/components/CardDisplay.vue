@@ -75,7 +75,7 @@
                   class="img-fluid"
                   :src="getMonsterAttributeIcon(displayCard.attribute)"
                   alt="Attribute"
-                />{{ displayCard.attribute | capitalize }}
+                />{{ displayCard.attribute.toUpperCase() }}
               </div>
               <div
                 v-else-if="
