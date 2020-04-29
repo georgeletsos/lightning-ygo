@@ -6,6 +6,10 @@ export const isMonsterCard = function(card) {
   return card.cardType === "monster";
 };
 
+export const isTunerMonsterCard = function(card) {
+  return card.types.includes("tuner");
+};
+
 export const isSpellCard = function(card) {
   return card.cardType === "spell";
 };

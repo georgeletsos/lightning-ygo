@@ -48,7 +48,13 @@
             <div class="card-name">{{ displayCard.name }}</div>
             <hr />
             <div class="d-flex">
-              <div v-if="isMonsterCard(displayCard)" class="l-monster-level">
+              <div
+                v-if="isMonsterCard(displayCard)"
+                class="l-monster-level"
+                :class="{
+                  'l-tuner-monster-level': isTunerMonsterCard(displayCard)
+                }"
+              >
                 <img class="img-fluid" :src="monsterLevelIcon" alt="Level" />{{
                   displayCard.level
                 }}
@@ -128,6 +134,7 @@ import {
 } from "@/store/actions.type";
 import {
   isMonsterCard,
+  isTunerMonsterCard,
   isSpellCard,
   isTrapCard,
   isStNormal
@@ -204,6 +211,7 @@ export default {
       this.$store.dispatch(FETCH_NEXT_DISPLAY_CARD, displayCard);
     },
     isMonsterCard,
+    isTunerMonsterCard,
     isSpellCard,
     isTrapCard,
     isStNormal,
@@ -363,6 +371,10 @@ $white: #ffffff;
   .l-monster-level,
   .l-st-card-type {
     margin-right: 1rem;
+  }
+
+  .l-tuner-monster-level {
+    color: $green;
   }
 }
 
