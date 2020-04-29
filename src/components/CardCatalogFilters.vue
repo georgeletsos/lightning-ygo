@@ -467,6 +467,12 @@ const monsterCardTypeFilters = [
     type: "synchro",
     text: "Synchro",
     checked: false
+  },
+  {
+    id: "token-monster",
+    type: "token",
+    text: "Token",
+    checked: false
   }
 ];
 
