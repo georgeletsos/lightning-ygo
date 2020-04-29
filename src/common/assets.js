@@ -15,7 +15,7 @@ export const trapFrameIcon = require("@/assets/card_frames/card_frame_trap_small
 export const spellIcon = require("@/assets/card_types/card_type_spell.png");
 export const trapIcon = require("@/assets/card_types/card_type_trap.png");
 
-// Monster Level Icons
+// Monster Level Icon
 export const monsterLevelIcon = require("@/assets/monster_level.png");
 
 // Monster Attribute Icons
@@ -125,6 +125,9 @@ export const getMonsterTypeIcon = function(monsterType) {
       throw Error("Not an existing monster type");
   }
 };
+
+// Card Effect Icon
+export const cardEffectIcon = require("@/assets/card_effect.png");
 
 // Spell/Trap Type Icons
 export const equipSpellIcon = require("@/assets/st_types/spell_type_equip.png");
