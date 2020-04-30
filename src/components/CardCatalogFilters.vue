@@ -1124,14 +1124,9 @@ export default {
 
       if (this.anyCheckedMonsterFilters) {
         filters.cardTypes = ["monster"];
-        filters.types = this.checkedMonsterCardTypeFilters
-          .map(monsterCardTypeFilter => monsterCardTypeFilter.type)
-          .concat(
-            this.checkedMonsterCardEffectFilters.map(
-              checkedMonsterCardEffectFilter =>
-                checkedMonsterCardEffectFilter.cardEffect
-            )
-          );
+        filters.types = this.checkedMonsterCardTypeFilters.map(
+          monsterCardTypeFilter => monsterCardTypeFilter.type
+        );
         filters.attributes = this.checkedMonsterAttributeFilters.map(
           monsterAttributeFilter => monsterAttributeFilter.attr
         );
@@ -1140,6 +1135,9 @@ export default {
         );
         filters.levels = this.checkedMonsterLevelFilters.map(
           monsterLevelFilter => monsterLevelFilter.level
+        );
+        filters.cardEffects = this.checkedMonsterCardEffectFilters.map(
+          monsterCardEffectFilter => monsterCardEffectFilter.cardEffect
         );
       } else if (this.anyCheckedSpellFilters) {
         filters.cardTypes = ["spell"];
