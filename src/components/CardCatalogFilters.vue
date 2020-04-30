@@ -510,6 +510,12 @@ const monsterCardTypeFilters = [
     checked: false
   },
   {
+    id: "non-effect",
+    type: "non-effect",
+    text: "Non-Effect",
+    checked: false
+  },
+  {
     id: "token-monster",
     type: "token",
     text: "Token",
