@@ -510,12 +510,6 @@ const monsterCardTypeFilters = [
     checked: false
   },
   {
-    id: "non-effect",
-    type: "non-effect",
-    text: "Non-Effect",
-    checked: false
-  },
-  {
     id: "token-monster",
     type: "token",
     text: "Token",
@@ -787,38 +781,44 @@ const monsterLevelFilters = [
 const monsterCardEffectFilters = [
   {
     id: "toon",
-    ability: "toon",
+    cardEffect: "toon",
     text: "Toon",
     checked: false
   },
   {
     id: "gemini",
-    ability: "gemini",
+    cardEffect: "gemini",
     text: "Gemini",
     checked: false
   },
   {
     id: "union",
-    ability: "union",
+    cardEffect: "union",
     text: "Union",
     checked: false
   },
   {
     id: "spirit",
-    ability: "spirit",
+    cardEffect: "spirit",
     text: "Spirit",
     checked: false
   },
   {
     id: "tuner",
-    ability: "tuner",
+    cardEffect: "tuner",
     text: "Tuner",
     checked: false
   },
   {
     id: "flip",
-    ability: "flip",
+    cardEffect: "flip",
     text: "Flip",
+    checked: false
+  },
+  {
+    id: "non-effect",
+    cardEffect: "non-effect",
+    text: "Non-Effect",
     checked: false
   }
 ];
@@ -1129,7 +1129,7 @@ export default {
           .concat(
             this.checkedMonsterCardEffectFilters.map(
               checkedMonsterCardEffectFilter =>
-                checkedMonsterCardEffectFilter.ability
+                checkedMonsterCardEffectFilter.cardEffect
             )
           );
         filters.attributes = this.checkedMonsterAttributeFilters.map(
