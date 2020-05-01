@@ -415,7 +415,7 @@ import {
   faFilter,
   faSearch,
   faTrashAlt,
-  faSortAmountUp,
+  faSortAmountDownAlt,
   faSortAmountDown
 } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -891,7 +891,7 @@ const sortFieldFilters = [
 ];
 
 const sortOrderFilters = [
-  { value: "asc", icon: faSortAmountUp },
+  { value: "asc", icon: faSortAmountDownAlt },
   { value: "desc", icon: faSortAmountDown }
 ];
 
