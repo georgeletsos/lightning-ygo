@@ -70,7 +70,12 @@
                 }}
               </div>
 
-              <div v-if="isMonsterCard(displayCard)" class="l-monster-attr">
+              <div
+                v-if="
+                  isMonsterCard(displayCard) && displayCard.attribute !== '?'
+                "
+                class="l-monster-attr"
+              >
                 <img
                   class="img-fluid"
                   :src="getMonsterAttributeIcon(displayCard.attribute)"

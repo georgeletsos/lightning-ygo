@@ -9,7 +9,7 @@
         >
           <img v-lazy="card.image.big" :alt="card.name" class="img-fluid" />
           <img
-            v-if="isMonsterCard(card)"
+            v-if="isMonsterCard(card) && card.attribute !== '?'"
             class="img-fluid l-card-attr"
             :src="getMonsterAttributeIcon(card.attribute)"
             :alt="card.attribute"
@@ -27,7 +27,7 @@
             alt="trap"
           />
           <img
-            v-if="isMonsterCard(card)"
+            v-if="isMonsterCard(card) && card.monsterType !== '?'"
             class="img-fluid l-monster-type"
             :src="getMonsterTypeIcon(card.monsterType)"
             :alt="card.monsterType"
