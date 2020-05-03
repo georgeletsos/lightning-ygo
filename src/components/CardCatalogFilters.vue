@@ -50,7 +50,10 @@
             @click="showModal = true"
           >
             <font-awesome-icon class="mr-1" :icon="faIcons.faFilter" />
-            <span>Filter</span>
+            <span class="mr-1 d-none d-sm-block">Filter</span>
+            <span v-if="displayCards.length > 0">{{
+              `(${displayCards.length})`
+            }}</span>
           </button>
         </div>
 
@@ -418,6 +421,7 @@ import {
   faSortAmountDownAlt,
   faSortAmountDown
 } from "@fortawesome/free-solid-svg-icons";
+import { mapGetters } from "vuex";
 import {
   FETCH_CATALOG_CARDS,
   FETCH_DISPLAY_CARDS,
@@ -987,7 +991,8 @@ export default {
     lightAttrIcon: () => lightAttrIcon,
     spellcasterTypeIcon: () => spellcasterTypeIcon,
     monsterLevelIcon: () => monsterLevelIcon,
-    cardEffectIcon: () => cardEffectIcon
+    cardEffectIcon: () => cardEffectIcon,
+    ...mapGetters(["displayCards"])
   },
 
   data() {
@@ -1195,6 +1200,7 @@ $red: #830000;
 $white: #ffffff;
 
 .l-btn {
+  min-height: 36px;
   display: flex;
   align-items: center;
   background-color: $dark-blue;
