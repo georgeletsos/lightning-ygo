@@ -52,6 +52,7 @@ export const getMonsterAttributeIcon = function(attr) {
 export const aquaTypeIcon = require("@/assets/monster_types/monster_type_aqua.png");
 export const beastTypeIcon = require("@/assets/monster_types/monster_type_beast.png");
 export const beastWarriorTypeIcon = require("@/assets/monster_types/monster_type_beast_warrior.png");
+export const cyberseTypeIcon = require("@/assets/monster_types/monster_type_cyberse.png");
 export const dinosaurTypeIcon = require("@/assets/monster_types/monster_type_dinosaur.png");
 export const divineBeastTypeIcon = require("@/assets/monster_types/monster_type_divine_beast.png");
 export const dragonTypeIcon = require("@/assets/monster_types/monster_type_dragon.png");
@@ -81,6 +82,8 @@ export const getMonsterTypeIcon = function(monsterType) {
       return beastTypeIcon;
     case "beast-warrior":
       return beastWarriorTypeIcon;
+    case "cyberse":
+      return cyberseTypeIcon;
     case "dinosaur":
       return dinosaurTypeIcon;
     case "divine-beast":

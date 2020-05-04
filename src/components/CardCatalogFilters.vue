@@ -700,6 +700,12 @@ const monsterTypeFilters = [
     checked: false
   },
   {
+    id: "cyberse",
+    type: "cyberse",
+    text: "Cyberse",
+    checked: false
+  },
+  {
     id: "divine-beast",
     type: "divine-beast",
     text: "Divine-Beast",
