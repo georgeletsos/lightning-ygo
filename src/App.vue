@@ -37,7 +37,7 @@ import CardDisplay from "@/components/CardDisplay.vue";
 import CardCatalogFilters from "@/components/CardCatalogFilters.vue";
 import CardCatalog from "@/components/CardCatalog.vue";
 import Modal from "@/components/Modal.vue";
-import { CHANGE_DISPLAY_CARD } from "@/store/actions.type.js";
+import { CHANGE_DISPLAY_CARD } from "@/store/actions.type";
 
 export default {
   components: {

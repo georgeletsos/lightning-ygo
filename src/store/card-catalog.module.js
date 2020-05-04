@@ -1,4 +1,4 @@
-import { CardsService } from "@/common/api.service.js";
+import { CardsService } from "@/common/api.service";
 import {
   FETCH_CATALOG_CARDS,
   FETCH_DISPLAY_CARDS,
