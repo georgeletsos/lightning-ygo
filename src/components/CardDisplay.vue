@@ -208,6 +208,23 @@ export default {
     }
   },
 
+  created() {
+    window.addEventListener("keyup", event => {
+      switch (event.key) {
+        case "Left": // IE/Edge specific value
+        case "ArrowLeft":
+          this.fetchPrevDisplayCard(this.displayCard);
+          break;
+        case "Right": // IE/Edge specific value
+        case "ArrowRight":
+          this.fetchNextDisplayCard(this.displayCard);
+          break;
+        default:
+          return;
+      }
+    });
+  },
+
   methods: {
     fetchPrevDisplayCard(displayCard) {
       this.$store.dispatch(FETCH_PREV_DISPLAY_CARD, displayCard);
