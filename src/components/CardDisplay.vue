@@ -210,6 +210,10 @@ export default {
 
   created() {
     window.addEventListener("keyup", event => {
+      if (["INPUT", "SELECT"].includes(event.target.tagName)) {
+        return;
+      }
+
       switch (event.key) {
         case "Left": // IE/Edge specific value
         case "ArrowLeft":
