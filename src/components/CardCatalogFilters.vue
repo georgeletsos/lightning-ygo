@@ -62,7 +62,7 @@
             <font-awesome-icon class="mr-1" :icon="faIcons.faSearch" />
             <input
               v-model.trim="searchFilters.text"
-              id="text-search"
+              id="l-ygo-text-search"
               type="text"
               class="l-form-control"
               placeholder="Text Search"
@@ -1238,9 +1238,21 @@ $white: #ffffff;
   }
 
   input {
+    width: 100%;
     padding: 0;
     color: $white;
     background-color: inherit;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      box-shadow: 0 0 0 30px $dark-blue inset !important;
+    }
+
+    &:-webkit-autofill {
+      -webkit-text-fill-color: $white !important;
+    }
   }
 
   &.l-icon {
