@@ -8,16 +8,24 @@ import {
   RESET_DISPLAY_CARDS,
   CHANGE_DISPLAY_CARD
 } from "./actions.type";
-import { SET_CATALOG_CARDS, SET_DISPLAY_CARDS } from "./mutations.type";
+import {
+  SET_CATALOG_CARDS,
+  SET_DISPLAY_CARDS,
+  SET_DISPLAY_CARD
+} from "./mutations.type";
 
 const state = {
   catalogCards: [],
-  displayCards: []
+  displayCards: [],
+  displayCard: {}
 };
 
 const getters = {
   displayCards(state) {
     return state.displayCards;
+  },
+  displayCard(state) {
+    return state.displayCard;
   }
 };
 
@@ -108,6 +116,9 @@ const actions = {
   },
   [RESET_DISPLAY_CARDS]({ commit }) {
     commit(SET_DISPLAY_CARDS, []);
+  },
+  [CHANGE_DISPLAY_CARD]({ commit }, displayCard) {
+    commit(SET_DISPLAY_CARD, displayCard);
   }
 };
 
@@ -117,6 +128,9 @@ const mutations = {
   },
   [SET_DISPLAY_CARDS](state, cards) {
     state.displayCards = cards;
+  },
+  [SET_DISPLAY_CARD](state, card) {
+    state.displayCard = card;
   }
 };
 

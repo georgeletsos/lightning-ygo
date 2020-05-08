@@ -1,14 +1,12 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-import cardDisplay from "./card-display.module";
-import cardCatalog from "./card-catalog.module";
+import cards from "./cards.module";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
-    cardDisplay,
-    cardCatalog
+    cards
   }
 });
