@@ -7,14 +7,14 @@
   >
     <div id="l-card-image">
       <font-awesome-icon
-        v-if="displayCards.length > 1"
+        v-if="existsInDisplayCards(displayCard) && displayCards.length > 1"
         class="l-prev animated infinite bounceLeft faster"
         :icon="faIcons.faCaretLeft"
         size="3x"
         @click="fetchPrevDisplayCard"
       />
       <font-awesome-icon
-        v-if="displayCards.length > 1"
+        v-if="existsInDisplayCards(displayCard) && displayCards.length > 1"
         class="l-next animated infinite bounceRight faster"
         :icon="faIcons.faCaretRight"
         size="3x"
@@ -235,11 +235,19 @@ export default {
   },
 
   methods: {
+    // These 2 fetch methods are written without a param because of https://github.com/jerrybendy/vue-touch-events/issues/3
     fetchPrevDisplayCard() {
       this.$store.dispatch(FETCH_PREV_DISPLAY_CARD, this.displayCard);
     },
     fetchNextDisplayCard() {
       this.$store.dispatch(FETCH_NEXT_DISPLAY_CARD, this.displayCard);
+    },
+    existsInDisplayCards(card) {
+      return (
+        this.displayCards.findIndex(
+          displayCard => displayCard.name === card.name
+        ) > -1
+      );
     },
     isMonsterCard,
     isTunerMonsterCard,
