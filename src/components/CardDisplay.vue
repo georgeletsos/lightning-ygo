@@ -1,19 +1,24 @@
 <template>
-  <div v-if="Object.keys(displayCard).length > 0" class="h-100">
+  <div
+    v-if="Object.keys(displayCard).length > 0"
+    class="h-100"
+    v-touch:swipe.right="fetchPrevDisplayCard"
+    v-touch:swipe.left="fetchNextDisplayCard"
+  >
     <div id="l-card-image">
       <font-awesome-icon
         v-if="displayCards.length > 1"
         class="l-prev animated infinite bounceLeft faster"
         :icon="faIcons.faCaretLeft"
         size="3x"
-        @click="fetchPrevDisplayCard(displayCard)"
+        @click="fetchPrevDisplayCard"
       />
       <font-awesome-icon
         v-if="displayCards.length > 1"
         class="l-next animated infinite bounceRight faster"
         :icon="faIcons.faCaretRight"
         size="3x"
-        @click="fetchNextDisplayCard(displayCard)"
+        @click="fetchNextDisplayCard"
       />
 
       <transition :enter-active-class="enterActiveClass" mode="out-in">
@@ -217,11 +222,11 @@ export default {
       switch (event.key) {
         case "Left": // IE/Edge specific value
         case "ArrowLeft":
-          this.fetchPrevDisplayCard(this.displayCard);
+          this.fetchPrevDisplayCard();
           break;
         case "Right": // IE/Edge specific value
         case "ArrowRight":
-          this.fetchNextDisplayCard(this.displayCard);
+          this.fetchNextDisplayCard();
           break;
         default:
           return;
@@ -230,11 +235,11 @@ export default {
   },
 
   methods: {
-    fetchPrevDisplayCard(displayCard) {
-      this.$store.dispatch(FETCH_PREV_DISPLAY_CARD, displayCard);
+    fetchPrevDisplayCard() {
+      this.$store.dispatch(FETCH_PREV_DISPLAY_CARD, this.displayCard);
     },
-    fetchNextDisplayCard(displayCard) {
-      this.$store.dispatch(FETCH_NEXT_DISPLAY_CARD, displayCard);
+    fetchNextDisplayCard() {
+      this.$store.dispatch(FETCH_NEXT_DISPLAY_CARD, this.displayCard);
     },
     isMonsterCard,
     isTunerMonsterCard,
