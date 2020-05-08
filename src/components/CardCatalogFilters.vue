@@ -880,15 +880,15 @@ const trapFilters = [
     checked: false
   },
   {
-    id: "continuous-trap",
-    type: "continuous",
-    text: "Continuous Trap",
-    checked: false
-  },
-  {
     id: "counter-trap",
     type: "counter",
     text: "Counter Trap",
+    checked: false
+  },
+  {
+    id: "continuous-trap",
+    type: "continuous",
+    text: "Continuous Trap",
     checked: false
   }
 ];
