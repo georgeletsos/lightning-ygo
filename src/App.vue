@@ -97,6 +97,7 @@ $dark-blue-200: #0b182f;
   background-image: url("~@/assets/card_display_bg.png");
   background-repeat: no-repeat;
   background-size: cover;
+  user-select: none;
 }
 
 #l-card-catalog {
