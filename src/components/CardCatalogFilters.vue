@@ -1127,11 +1127,15 @@ export default {
       this.debouncedFetchCatalogCards();
     },
     fetchCatalogCards() {
-      let filters = {
-        text: this.searchFilters.text.trim(),
+      const filters = {
         sortField: this.searchFilters.sortField,
         sortOrder: this.searchFilters.sortOrder
       };
+
+      const text = this.searchFilters.text.trim();
+      if (text.length >= 2) {
+        filters.text = text;
+      }
 
       if (this.anyCheckedMonsterFilters) {
         filters.cardTypes = ["monster"];
@@ -1171,8 +1175,10 @@ export default {
       }
 
       // No filters, just text
-      if (typeof filters.cardTypes === "undefined") {
-        if (filters.text) {
+      // eslint-disable-next-line
+      if (!filters.hasOwnProperty("cardTypes")) {
+        // eslint-disable-next-line
+        if (filters.hasOwnProperty("text")) {
           filters.cardTypes = ["monster", "spell", "trap"];
         } else {
           // No filters, no text
