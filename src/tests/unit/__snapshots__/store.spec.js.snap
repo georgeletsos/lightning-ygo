@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`|cards.module| should fetch any Extra Deck Monsters as |state.displayCards| 1`] = `
+Array [
+  Object {
+    "cardType": "monster",
+    "name": "Chimeratech Overdragon",
+    "types": Array [
+      "fusion",
+      "effect",
+    ],
+  },
+  Object {
+    "cardType": "monster",
+    "name": "Chimeratech Rampage Dragon",
+    "types": Array [
+      "fusion",
+      "effect",
+    ],
+  },
+  Object {
+    "cardType": "monster",
+    "name": "Cyber End Dragon",
+    "types": Array [
+      "fusion",
+      "effect",
+    ],
+  },
+  Object {
+    "cardType": "monster",
+    "name": "Cyber Twin Dragon",
+    "types": Array [
+      "fusion",
+      "effect",
+    ],
+  },
+]
+`;
+
+exports[`|cards.module| should fetch any Main Deck Monsters as |state.displayCards| 1`] = `
+Array [
+  Object {
+    "cardType": "monster",
+    "name": "Armored Cybern",
+    "types": Array [
+      "union",
+      "effect",
+    ],
+  },
+  Object {
+    "cardType": "monster",
+    "name": "Cyber Dragon",
+    "types": Array [
+      "effect",
+    ],
+  },
+  Object {
+    "cardType": "monster",
+    "name": "Cyber Dragon Core",
+    "types": Array [
+      "effect",
+    ],
+  },
+  Object {
+    "cardType": "monster",
+    "name": "Cyber Dragon Drei",
+    "types": Array [
+      "effect",
+    ],
+  },
+  Object {
+    "cardType": "monster",
+    "name": "Cyber Dragon Vier",
+    "types": Array [
+      "effect",
+    ],
+  },
+  Object {
+    "cardType": "monster",
+    "name": "Cyber Dragon Zwei",
+    "types": Array [
+      "effect",
+    ],
+  },
+  Object {
+    "cardType": "monster",
+    "name": "Proto-Cyber Dragon",
+    "types": Array [
+      "effect",
+    ],
+  },
+  Object {
+    "cardType": "monster",
+    "name": "Toon Cyber Dragon",
+    "types": Array [
+      "toon",
+      "effect",
+    ],
+  },
+]
+`;
+
+exports[`|cards.module| should fetch any Spells/Traps as |state.displayCards| 1`] = `
+Array [
+  Object {
+    "cardType": "trap",
+    "name": "Attack Reflector Unit",
+    "types": Array [
+      "normal",
+    ],
+  },
+  Object {
+    "cardType": "trap",
+    "name": "Cyber Network",
+    "types": Array [
+      "continuous",
+    ],
+  },
+  Object {
+    "cardType": "spell",
+    "name": "Cyber Repair Plant",
+    "types": Array [
+      "normal",
+    ],
+  },
+  Object {
+    "cardType": "spell",
+    "name": "Cyberload Fusion",
+    "types": Array [
+      "quick-play",
+    ],
+  },
+  Object {
+    "cardType": "trap",
+    "name": "Cybernetic Overflow",
+    "types": Array [
+      "normal",
+    ],
+  },
+  Object {
+    "cardType": "spell",
+    "name": "Evolution Burst",
+    "types": Array [
+      "normal",
+    ],
+  },
+  Object {
+    "cardType": "spell",
+    "name": "Photon Generator Unit",
+    "types": Array [
+      "quick-play",
+    ],
+  },
+]
+`;
