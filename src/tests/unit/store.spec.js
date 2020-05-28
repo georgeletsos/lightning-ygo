@@ -12,45 +12,9 @@ import {
   RESET_DISPLAY_CARDS,
   CHANGE_DISPLAY_CARD
 } from "@/store/actions.type";
+import { mockCards } from "./mocks";
 
 jest.mock("axios");
-const mockCards = [
-  { cardType: "monster", name: "Armored Cybern", types: ["union", "effect"] },
-  { cardType: "trap", name: "Attack Reflector Unit", types: ["normal"] },
-  {
-    cardType: "monster",
-    name: "Chimeratech Overdragon",
-    types: ["fusion", "effect"]
-  },
-  {
-    cardType: "monster",
-    name: "Chimeratech Rampage Dragon",
-    types: ["fusion", "effect"]
-  },
-  { cardType: "monster", name: "Cyber Dragon", types: ["effect"] },
-  { cardType: "monster", name: "Cyber Dragon Core", types: ["effect"] },
-  { cardType: "monster", name: "Cyber Dragon Drei", types: ["effect"] },
-  { cardType: "monster", name: "Cyber Dragon Vier", types: ["effect"] },
-  { cardType: "monster", name: "Cyber Dragon Zwei", types: ["effect"] },
-  {
-    cardType: "monster",
-    name: "Cyber End Dragon",
-    types: ["fusion", "effect"]
-  },
-  { cardType: "trap", name: "Cyber Network", types: ["continuous"] },
-  { cardType: "spell", name: "Cyber Repair Plant", types: ["normal"] },
-  {
-    cardType: "monster",
-    name: "Cyber Twin Dragon",
-    types: ["fusion", "effect"]
-  },
-  { cardType: "spell", name: "Cyberload Fusion", types: ["quick-play"] },
-  { cardType: "trap", name: "Cybernetic Overflow", types: ["normal"] },
-  { cardType: "spell", name: "Evolution Burst", types: ["normal"] },
-  { cardType: "spell", name: "Photon Generator Unit", types: ["quick-play"] },
-  { cardType: "monster", name: "Proto-Cyber Dragon", types: ["effect"] },
-  { cardType: "monster", name: "Toon Cyber Dragon", types: ["toon", "effect"] }
-];
 axios.get.mockResolvedValue({ data: mockCards });
 
 const localVue = createLocalVue();
