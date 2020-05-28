@@ -1,0 +1,452 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardCatalog.vue should render correctly 1`] = `
+<div
+  id="l-catalog"
+>
+  <div
+    class="row no-gutters"
+  >
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Armored Cybern"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="wind"
+          class="img-fluid l-card-attr"
+          src=""
+        />
+         
+        <img
+          alt="machine"
+          class="img-fluid l-monster-type"
+          src=""
+        />
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Attack Reflector Unit"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="trap"
+          class="img-fluid l-st-card-type"
+          src=""
+        />
+         
+        <!---->
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Chimeratech Overdragon"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="dark"
+          class="img-fluid l-card-attr"
+          src=""
+        />
+         
+        <img
+          alt="machine"
+          class="img-fluid l-monster-type"
+          src=""
+        />
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Chimeratech Rampage Dragon"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="dark"
+          class="img-fluid l-card-attr"
+          src=""
+        />
+         
+        <img
+          alt="machine"
+          class="img-fluid l-monster-type"
+          src=""
+        />
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Cyber Dragon"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="light"
+          class="img-fluid l-card-attr"
+          src=""
+        />
+         
+        <img
+          alt="machine"
+          class="img-fluid l-monster-type"
+          src=""
+        />
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Cyber Dragon Core"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="light"
+          class="img-fluid l-card-attr"
+          src=""
+        />
+         
+        <img
+          alt="machine"
+          class="img-fluid l-monster-type"
+          src=""
+        />
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Cyber Dragon Drei"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="light"
+          class="img-fluid l-card-attr"
+          src=""
+        />
+         
+        <img
+          alt="machine"
+          class="img-fluid l-monster-type"
+          src=""
+        />
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Cyber Dragon Vier"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="light"
+          class="img-fluid l-card-attr"
+          src=""
+        />
+         
+        <img
+          alt="machine"
+          class="img-fluid l-monster-type"
+          src=""
+        />
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Cyber Dragon Zwei"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="light"
+          class="img-fluid l-card-attr"
+          src=""
+        />
+         
+        <img
+          alt="machine"
+          class="img-fluid l-monster-type"
+          src=""
+        />
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Cyber End Dragon"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="light"
+          class="img-fluid l-card-attr"
+          src=""
+        />
+         
+        <img
+          alt="machine"
+          class="img-fluid l-monster-type"
+          src=""
+        />
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Cyber Network"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="trap"
+          class="img-fluid l-st-card-type"
+          src=""
+        />
+         
+        <img
+          alt="continuous"
+          class="img-fluid l-st-type"
+          src=""
+        />
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Cyber Repair Plant"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="spell"
+          class="img-fluid l-st-card-type"
+          src=""
+        />
+         
+        <!---->
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Cyber Twin Dragon"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="light"
+          class="img-fluid l-card-attr"
+          src=""
+        />
+         
+        <img
+          alt="machine"
+          class="img-fluid l-monster-type"
+          src=""
+        />
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Cyberload Fusion"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="spell"
+          class="img-fluid l-st-card-type"
+          src=""
+        />
+         
+        <img
+          alt="quick-play"
+          class="img-fluid l-st-type"
+          src=""
+        />
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Cybernetic Overflow"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="trap"
+          class="img-fluid l-st-card-type"
+          src=""
+        />
+         
+        <!---->
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Evolution Burst"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="spell"
+          class="img-fluid l-st-card-type"
+          src=""
+        />
+         
+        <!---->
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Photon Generator Unit"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="spell"
+          class="img-fluid l-st-card-type"
+          src=""
+        />
+         
+        <img
+          alt="quick-play"
+          class="img-fluid l-st-type"
+          src=""
+        />
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Proto-Cyber Dragon"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="light"
+          class="img-fluid l-card-attr"
+          src=""
+        />
+         
+        <img
+          alt="machine"
+          class="img-fluid l-monster-type"
+          src=""
+        />
+      </div>
+    </div>
+    <div
+      class="col-2 p-1"
+    >
+      <div
+        class="position-relative l-cursor-pointer"
+      >
+        <img
+          alt="Toon Cyber Dragon"
+          class="img-fluid"
+        />
+         
+        <img
+          alt="light"
+          class="img-fluid l-card-attr"
+          src=""
+        />
+         
+        <img
+          alt="machine"
+          class="img-fluid l-monster-type"
+          src=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
