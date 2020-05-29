@@ -18,7 +18,7 @@
             class="d-none"
             :id="displayFilter.id"
             v-model="displayFilter.active"
-            @change="fetchDisplayCards"
+            @change="fetchDisplayCards()"
           />
           <img
             class="img-fluid mr-1 l-card-frame"
@@ -76,7 +76,7 @@
           <select
             class="l-form-control custom-select"
             v-model="searchFilters.sortField"
-            @change="submitForm"
+            @change="submitForm()"
           >
             <option
               v-for="sortFieldFilter in sortFieldFilters"

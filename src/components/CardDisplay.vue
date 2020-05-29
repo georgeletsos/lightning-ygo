@@ -11,14 +11,14 @@
         class="l-prev animated infinite bounceLeft faster"
         :icon="faIcons.faCaretLeft"
         size="3x"
-        @click="fetchPrevDisplayCard"
+        @click="fetchPrevDisplayCard()"
       />
       <font-awesome-icon
         v-if="existsInDisplayCards(displayCard) && displayCards.length > 1"
         class="l-next animated infinite bounceRight faster"
         :icon="faIcons.faCaretRight"
         size="3x"
-        @click="fetchNextDisplayCard"
+        @click="fetchNextDisplayCard()"
       />
 
       <transition :enter-active-class="enterActiveClass" mode="out-in">
