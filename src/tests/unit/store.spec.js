@@ -20,20 +20,20 @@ axios.get.mockResolvedValue({ data: mockCards });
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
-describe("|cards.module|", () => {
+describe("`cards.module`", () => {
   let store;
   beforeEach(() => {
     store = new Vuex.Store(cloneDeep(cardsModule));
   });
 
-  it("should fetch |state.catalogCards| from the API", async () => {
+  it("FETCH_CATALOG_CARDS - should fetch `state.catalogCards` from the API", async () => {
     expect.assertions(1);
 
     await store.dispatch(FETCH_CATALOG_CARDS, {});
     expect(store.state.catalogCards).not.toHaveLength(0);
   });
 
-  it("should fetch any Main Deck Monsters as |state.displayCards|", () => {
+  it("FETCH_DISPLAY_CARDS - should fetch any Main Deck Monsters as `state.displayCards`", () => {
     store.state.catalogCards = cloneDeep(mockCards);
     const displayFilters = [
       {
@@ -47,7 +47,7 @@ describe("|cards.module|", () => {
     expect(store.state.displayCards).toMatchSnapshot();
   });
 
-  it("should fetch any Extra Deck Monsters as |state.displayCards|", () => {
+  it("FETCH_DISPLAY_CARDS - should fetch any Extra Deck Monsters as `state.displayCards`", () => {
     store.state.catalogCards = cloneDeep(mockCards);
     const displayFilters = [
       {
@@ -61,7 +61,7 @@ describe("|cards.module|", () => {
     expect(store.state.displayCards).toMatchSnapshot();
   });
 
-  it("should fetch any Spells/Traps as |state.displayCards|", () => {
+  it("FETCH_DISPLAY_CARDS - should fetch any Spells/Traps as `state.displayCards`", () => {
     store.state.catalogCards = cloneDeep(mockCards);
     const displayFilters = [
       {
@@ -78,7 +78,7 @@ describe("|cards.module|", () => {
     expect(store.state.displayCards).toMatchSnapshot();
   });
 
-  it("should change |state.displayCard| to the previous card of |state.displayCards|", () => {
+  it("FETCH_PREV_DISPLAY_CARD - should change `state.displayCard` to the previous card of `state.displayCards`", () => {
     store.state.displayCards = cloneDeep(mockCards);
     const mockCardIndex = 2;
     const mockCard = mockCards[mockCardIndex];
@@ -87,7 +87,7 @@ describe("|cards.module|", () => {
     expect(store.state.displayCard).toEqual(mockCards[mockCardIndex - 1]);
   });
 
-  it("when the current |state.displayCard| is the first card; should change |state.displayCard| to the last card of |state.displayCards|", () => {
+  it("FETCH_PREV_DISPLAY_CARD - when the current `state.displayCard` is the first card; should change `state.displayCard` to the last card of `state.displayCards`", () => {
     store.state.displayCards = cloneDeep(mockCards);
     const mockCard = mockCards[0];
 
@@ -95,7 +95,7 @@ describe("|cards.module|", () => {
     expect(store.state.displayCard).toEqual(mockCards[mockCards.length - 1]);
   });
 
-  it("should change |state.displayCard| to the next card of |state.displayCards|", () => {
+  it("FETCH_NEXT_DISPLAY_CARD - should change `state.displayCard` to the next card of `state.displayCards`", () => {
     store.state.displayCards = cloneDeep(mockCards);
     const mockCardIndex = 2;
     const mockCard = mockCards[mockCardIndex];
@@ -104,7 +104,7 @@ describe("|cards.module|", () => {
     expect(store.state.displayCard).toEqual(mockCards[mockCardIndex + 1]);
   });
 
-  it("when the current |state.displayCard| is the last card; should change |state.displayCard| to the first card of |state.displayCards|", () => {
+  it("FETCH_NEXT_DISPLAY_CARD - when the current `state.displayCard` is the last card; should change `state.displayCard` to the first card of `state.displayCards`", () => {
     store.state.displayCards = cloneDeep(mockCards);
     const mockCard = mockCards[mockCards.length - 1];
 
@@ -112,21 +112,21 @@ describe("|cards.module|", () => {
     expect(store.state.displayCard).toEqual(mockCards[0]);
   });
 
-  it("should reset |state.catalogCards|", () => {
+  it("RESET_CATALOG_CARDS - should reset `state.catalogCards`", () => {
     store.state.catalogCards = cloneDeep(mockCards);
 
     store.dispatch(RESET_CATALOG_CARDS);
     expect(store.state.catalogCards).toHaveLength(0);
   });
 
-  it("should reset |state.displayCards|", () => {
+  it("RESET_DISPLAY_CARDS - should reset `state.displayCards`", () => {
     store.state.displayCards = cloneDeep(mockCards);
 
     store.dispatch(RESET_DISPLAY_CARDS);
     expect(store.state.displayCards).toHaveLength(0);
   });
 
-  it("should change |state.displayCard|", () => {
+  it("CHANGE_DISPLAY_CARD - should change `state.displayCard`", () => {
     const mockCard = mockCards[0];
     store.dispatch(CHANGE_DISPLAY_CARD, mockCard);
     expect(store.state.displayCard).toEqual(mockCard);
