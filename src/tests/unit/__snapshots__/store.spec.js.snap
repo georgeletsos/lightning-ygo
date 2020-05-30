@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`|cards.module| should fetch any Extra Deck Monsters as |state.displayCards| 1`] = `
+exports[`\`cards.module\` FETCH_DISPLAY_CARDS - should fetch any Extra Deck Monsters as \`state.displayCards\` 1`] = `
 Array [
   Object {
     "atk": "?",
@@ -89,7 +89,7 @@ A Fusion Summon of this card can only be done with the above Fusion Materials. T
 ]
 `;
 
-exports[`|cards.module| should fetch any Main Deck Monsters as |state.displayCards| 1`] = `
+exports[`\`cards.module\` FETCH_DISPLAY_CARDS - should fetch any Main Deck Monsters as \`state.displayCards\` 1`] = `
 Array [
   Object {
     "atk": 0,
@@ -248,7 +248,7 @@ Array [
 ]
 `;
 
-exports[`|cards.module| should fetch any Spells/Traps as |state.displayCards| 1`] = `
+exports[`\`cards.module\` FETCH_DISPLAY_CARDS - should fetch any Spells/Traps as \`state.displayCards\` 1`] = `
 Array [
   Object {
     "atk": null,
