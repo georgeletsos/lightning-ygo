@@ -80,17 +80,23 @@ export default {
   },
 
   mounted() {
-    // When the active history entry changes, EMIT open/close event depending on this modal's hash existence in the URL
-    window.addEventListener("popstate", () => {
+    this.popstateHandler = () => {
       if (window.location.hash === this.hash) {
         this.$emit("popstateOpen");
       } else {
         this.$emit("popstateClose");
       }
-    });
+    };
+
+    // When the active history entry changes, EMIT open/close event depending on this modal's hash existence in the URL
+    window.addEventListener("popstate", this.popstateHandler);
 
     // Emit the previous EventListener, so that this modal is shown if its hash is ALREADY in the URL on initial load
     window.dispatchEvent(new Event("popstate"));
+  },
+
+  beforeDestroy() {
+    window.removeEventListener("popstate", this.popstateHandler);
   }
 };
 </script>
