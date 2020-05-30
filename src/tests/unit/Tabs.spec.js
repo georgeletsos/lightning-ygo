@@ -8,7 +8,6 @@ const tabsComp = {
     Tabs,
     Tab
   },
-
   template: `
   <tabs>
     <tab title="Monsters" id="monsters" :selected="true">
@@ -21,8 +20,8 @@ const tabsComp = {
   `
 };
 
-describe("Tabs.vue", () => {
-  it("should load correctly", async () => {
+describe("`Tabs.vue`", () => {
+  it("should render correctly", async () => {
     const wrapper = mount(tabsComp);
     await flushPromises();
 
@@ -31,7 +30,7 @@ describe("Tabs.vue", () => {
     expect(wrapper.findAll(".l-nav-item").length).toBe(2);
   });
 
-  it("should load every child |Tab|", async () => {
+  it("should render every child `Tab` component correctly", async () => {
     const wrapper = mount(tabsComp);
     await flushPromises();
 
@@ -46,20 +45,32 @@ describe("Tabs.vue", () => {
     expect(stTab.isVisible()).toBe(false);
   });
 
-  it("should click on any of the |Tabs|, to make visible ONLY the specific child |Tab|", async () => {
-    const wrapper = mount(tabsComp);
-    await flushPromises();
+  describe("`methods`", () => {
+    it("`hideAll()` - should hide every child `Tab` component", async () => {
+      const wrapper = mount(tabsComp);
+      await flushPromises();
 
-    const monstersTab = wrapper.find("#monsters");
-    const stTab = wrapper.find("#spells-traps");
-    const tabs = wrapper.findAll(".l-nav-tab");
+      wrapper.findComponent(Tabs).vm.hideAll();
+      await wrapper.vm.$nextTick();
+      expect(wrapper.find("#monsters").isVisible()).toBe(false);
+      expect(wrapper.find("#spells-traps").isVisible()).toBe(false);
+    });
 
-    await tabs.at(1).trigger("click");
-    expect(monstersTab.isVisible()).toBe(false);
-    expect(stTab.isVisible()).toBe(true);
+    it("`showTab(selectedTab)` - should show only the selected child `Tab` component", async () => {
+      const wrapper = mount(tabsComp);
+      await flushPromises();
 
-    await tabs.at(0).trigger("click");
-    expect(monstersTab.isVisible()).toBe(true);
-    expect(stTab.isVisible()).toBe(false);
+      const monstersTab = wrapper.find("#monsters");
+      expect(monstersTab.isVisible()).toBe(true);
+      const stTab = wrapper.find("#spells-traps");
+      expect(stTab.isVisible()).toBe(false);
+
+      const tabs = wrapper.findComponent(Tabs);
+      tabs.vm.hideAll();
+      tabs.vm.showTab(tabs.vm.tabs[1]);
+      await wrapper.vm.$nextTick();
+      expect(monstersTab.isVisible()).toBe(false);
+      expect(stTab.isVisible()).toBe(true);
+    });
   });
 });
