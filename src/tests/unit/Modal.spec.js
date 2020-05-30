@@ -35,6 +35,36 @@ describe("`Modal.vue`", () => {
   });
 
   describe("`:props`", () => {
+    it("`:show` - should be visible", () => {
+      const wrapper = mount(Modal, {
+        propsData: {
+          show: true
+        }
+      });
+
+      expect(wrapper.find(".l-modal").isVisible()).toBe(true);
+    });
+
+    it("`:show` - should be hidden", () => {
+      const wrapper = mount(Modal, {
+        propsData: {
+          show: false
+        }
+      });
+
+      expect(wrapper.find(".l-modal").isVisible()).toBe(false);
+    });
+
+    it("`:header` - should render a header", () => {
+      const wrapper = mount(Modal, {
+        propsData: {
+          header: true
+        }
+      });
+
+      expect(wrapper.find(".l-modal-header").exists()).toBe(true);
+    });
+
     it("`:header` - should not render a header", () => {
       const wrapper = mount(Modal, {
         propsData: {
@@ -43,6 +73,16 @@ describe("`Modal.vue`", () => {
       });
 
       expect(wrapper.find(".l-modal-header").exists()).toBe(false);
+    });
+
+    it("`:footer` - should render a footer", () => {
+      const wrapper = mount(Modal, {
+        propsData: {
+          footer: true
+        }
+      });
+
+      expect(wrapper.find(".l-modal-footer").exists()).toBe(true);
     });
 
     it("`:footer` - should not render a footer", () => {
@@ -55,6 +95,16 @@ describe("`Modal.vue`", () => {
       expect(wrapper.find(".l-modal-footer").exists()).toBe(false);
     });
 
+    it("`:bodyPadding` - should render padding on the body", () => {
+      const wrapper = mount(Modal, {
+        propsData: {
+          bodyPadding: true
+        }
+      });
+
+      expect(wrapper.find(".l-modal-body").classes()).not.toContain("p-0");
+    });
+
     it("`:bodyPadding` - should not render padding on the body", () => {
       const wrapper = mount(Modal, {
         propsData: {
@@ -65,7 +115,7 @@ describe("`Modal.vue`", () => {
       expect(wrapper.find(".l-modal-body").classes()).toContain("p-0");
     });
 
-    it("`:fullscreen` - should render in full screen", () => {
+    it("`:fullscreen` - should render in fullscreen", () => {
       const wrapper = mount(Modal, {
         propsData: {
           fullscreen: true
@@ -73,6 +123,18 @@ describe("`Modal.vue`", () => {
       });
 
       expect(wrapper.find(".modal-dialog").classes()).toContain(
+        "l-full-screen-modal"
+      );
+    });
+
+    it("`:fullscreen` - should not render in fullscreen", () => {
+      const wrapper = mount(Modal, {
+        propsData: {
+          fullscreen: false
+        }
+      });
+
+      expect(wrapper.find(".modal-dialog").classes()).not.toContain(
         "l-full-screen-modal"
       );
     });
@@ -91,6 +153,8 @@ describe("`Modal.vue`", () => {
       const eventName = "outsideClick";
       expect(wrapper.emitted(eventName)).toBeTruthy();
       expect(wrapper.emitted(eventName).length).toBe(1);
+
+      wrapper.destroy();
     });
 
     it("`@popstateClose` - should emit a `popstateClose()` event when the active history entry changes and its `$data.hash` is not in the URL", async () => {
@@ -104,6 +168,8 @@ describe("`Modal.vue`", () => {
       const eventName = "popstateClose";
       expect(wrapper.emitted(eventName)).toBeTruthy();
       expect(wrapper.emitted(eventName).length).toBe(1);
+
+      wrapper.destroy();
     });
 
     it("`@popstateOpen` - should emit a `popstateOpen()` event when the active history entry changes and its `$data.hash` is in the URL", async () => {
@@ -119,7 +185,6 @@ describe("`Modal.vue`", () => {
 
       const eventName = "popstateOpen";
       expect(wrapper.emitted(eventName)).toBeTruthy();
-      expect(wrapper.emitted(eventName).length).toBe(2); // 2 times because the same event listener was also added by the previous test
     });
   });
 
