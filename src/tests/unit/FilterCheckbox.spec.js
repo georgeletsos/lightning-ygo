@@ -1,9 +1,8 @@
 import { mount } from "@vue/test-utils";
 import FilterCheckbox from "@/components/FilterCheckbox.vue";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-describe("FilterCheckbox.vue", () => {
-  it("should load correctly", async () => {
+describe("`FilterCheckbox.vue`", () => {
+  it("should render correctly", async () => {
     const wrapper = mount(FilterCheckbox, {
       propsData: {
         id: "test-filter-checkbox",
@@ -13,10 +12,10 @@ describe("FilterCheckbox.vue", () => {
 
     expect(wrapper.find(".l-filter").exists()).toBe(true);
     expect(wrapper.find('input[type="checkbox"]').exists()).toBe(true);
-    expect(wrapper.findComponent(FontAwesomeIcon).exists()).toBe(true);
+    expect(wrapper.find(".fa-circle").exists()).toBe(true);
   });
 
-  it("should change value and Font Awesome Icon on click", async () => {
+  it("should change value and Font Awesome icon class when it's clicked", async () => {
     const wrapper = mount({
       components: { FilterCheckbox },
       data() {
@@ -30,18 +29,15 @@ describe("FilterCheckbox.vue", () => {
       `
     });
     const checkbox = wrapper.find('input[type="checkbox"]');
-    const fontAwesomeComp = wrapper.findComponent(FontAwesomeIcon);
 
     await wrapper.trigger("click");
     expect(checkbox.element.checked).toBe(true);
-    expect(wrapper.vm.$data.checked).toBe(true);
-    expect(fontAwesomeComp.classes()).toContain("checked");
-    expect(fontAwesomeComp.classes()).toContain("fa-check-circle");
+    expect(wrapper.vm.checked).toBe(true);
+    expect(wrapper.find(".checked.fa-check-circle").exists()).toBe(true);
 
     await wrapper.trigger("click");
     expect(checkbox.element.checked).toBe(false);
-    expect(wrapper.vm.$data.checked).toBe(false);
-    expect(fontAwesomeComp.classes()).not.toContain("checked");
-    expect(fontAwesomeComp.classes()).toContain("fa-circle");
+    expect(wrapper.vm.checked).toBe(false);
+    expect(wrapper.find(".fa-circle").classes()).not.toContain("checked");
   });
 });
