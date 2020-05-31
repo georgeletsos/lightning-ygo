@@ -447,7 +447,7 @@ import {
 
 const displayFilters = [
   {
-    id: 1,
+    id: "main-deck-monsters",
     active: false,
     src: normalFrameIcon,
     alt: "Main Deck Monsters",
@@ -456,7 +456,7 @@ const displayFilters = [
     excludedTypes: ["fusion", "synchro"]
   },
   {
-    id: 2,
+    id: "spells",
     active: false,
     src: spellFrameIcon,
     alt: "Spells",
@@ -464,7 +464,7 @@ const displayFilters = [
     cardType: "spell"
   },
   {
-    id: 3,
+    id: "traps",
     active: false,
     src: trapFrameIcon,
     alt: "Traps",
@@ -472,7 +472,7 @@ const displayFilters = [
     cardType: "trap"
   },
   {
-    id: 4,
+    id: "extra-deck-monsters",
     active: false,
     src: fusionFrameIcon,
     alt: "Extra Deck Monsters",
