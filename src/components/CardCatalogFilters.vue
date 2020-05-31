@@ -12,6 +12,7 @@
           :for="displayFilter.id"
           class="l-btn l-btn-sm"
           :class="{ active: displayFilter.active }"
+          :data-testid="displayFilter.id"
         >
           <input
             type="checkbox"
@@ -46,6 +47,7 @@
             type="button"
             class="l-btn w-100"
             :class="{ active: filterBtnActive }"
+            data-testid="filter-btn"
             v-pulse
             @click="showModal = true"
           >
