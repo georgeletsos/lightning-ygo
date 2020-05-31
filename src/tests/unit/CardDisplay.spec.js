@@ -1,6 +1,6 @@
 import { mount, createLocalVue } from "@vue/test-utils";
-import flushPromises from "flush-promises";
 import CardDisplay from "@/components/CardDisplay.vue";
+import flushPromises from "flush-promises";
 import Vuex from "vuex";
 import {
   FETCH_PREV_DISPLAY_CARD,
@@ -14,8 +14,8 @@ localVue.use(Vuex);
 localVue.directive("touch", () => {});
 
 const actions = {
-  [FETCH_PREV_DISPLAY_CARD]: () => {},
-  [FETCH_NEXT_DISPLAY_CARD]: () => {}
+  [FETCH_PREV_DISPLAY_CARD]: jest.fn(),
+  [FETCH_NEXT_DISPLAY_CARD]: jest.fn()
 };
 const getters = {
   displayCard: () => mockCards[2],
@@ -32,20 +32,7 @@ describe("CardDisplay.vue", () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  it("should test if the |capitalizedDisplayCardMonsterType| computed property works correctly", () => {
-    const wrapper = mount(CardDisplay, { store, localVue });
-    expect(wrapper.vm.capitalizedDisplayCardMonsterType).toBe("Machine");
-  });
-
-  it("should test if the |existsInDisplayCards| method works correctly", () => {
-    const wrapper = mount(CardDisplay, { store, localVue });
-    expect(wrapper.vm.existsInDisplayCards(wrapper.vm.displayCard)).toBe(true);
-    expect(
-      wrapper.vm.existsInDisplayCards({ name: "Ancient Gear Golem" })
-    ).toBe(false);
-  });
-
-  it("should switch between the card image/art image, on card image/art image click", async () => {
+  it("should switch between the card image/art image when card image/art image is clicked", async () => {
     const wrapper = mount(CardDisplay, { store, localVue });
     expect(wrapper.find(".l-image-big").exists()).toBe(true);
 
@@ -58,7 +45,7 @@ describe("CardDisplay.vue", () => {
     expect(wrapper.find(".l-image-big").exists()).toBe(true);
   });
 
-  it("should call the |fetchPrevDisplayCard| method, on previous icon click AND on left arrow keyboard button push", async () => {
+  it("should call the `fetchPrevDisplayCard()` method when the left arrow keyboard button is pushed", async () => {
     const wrapper = mount(CardDisplay, { store, localVue });
     const fetchPrevDisplayCardSpy = jest.spyOn(
       wrapper.vm,
@@ -66,24 +53,70 @@ describe("CardDisplay.vue", () => {
     );
     await flushPromises();
 
-    await wrapper.find(".l-prev").trigger("click");
-    expect(fetchPrevDisplayCardSpy).toHaveBeenCalledTimes(1);
-
     window.dispatchEvent(new KeyboardEvent("keyup", { key: "ArrowLeft" }));
-    expect(fetchPrevDisplayCardSpy).toHaveBeenCalledTimes(2);
+    expect(fetchPrevDisplayCardSpy).toHaveBeenCalledTimes(1);
   });
 
-  it("should call the |fetchNextDisplayCard| method, on next icon click AND on right arrow keyboard button push", async () => {
+  it("should call the `fetchNextDisplayCard()` method when the right arrow keyboard button is pushed", async () => {
     const wrapper = mount(CardDisplay, { store, localVue });
     const fetchNextDisplayCardSpy = jest.spyOn(
       wrapper.vm,
       "fetchNextDisplayCard"
     );
 
-    await wrapper.find(".l-next").trigger("click");
-    expect(fetchNextDisplayCardSpy).toHaveBeenCalledTimes(1);
-
     window.dispatchEvent(new KeyboardEvent("keyup", { key: "ArrowRight" }));
-    expect(fetchNextDisplayCardSpy).toHaveBeenCalledTimes(2);
+    expect(fetchNextDisplayCardSpy).toHaveBeenCalledTimes(1);
+  });
+
+  describe("`filters`", () => {
+    it("`capitalize` - should capitalize a given string", () => {
+      const wrapper = mount(CardDisplay, { store, localVue });
+
+      const capitalizedWord = wrapper.vm.$options.filters.capitalize("word");
+      expect(capitalizedWord).toBe("Word");
+    });
+  });
+
+  describe("`computedProperties`", () => {
+    it("`capitalizedDisplayCardMonsterType` - should capitalize every word of the `displayCard` monsterType", async () => {
+      const wrapper = mount(CardDisplay, { store, localVue });
+      expect(wrapper.vm.capitalizedDisplayCardMonsterType).toBe("Machine");
+    });
+  });
+
+  describe("`methods`", () => {
+    beforeEach(() => {
+      jest.resetAllMocks();
+    });
+
+    it("`existsInDisplayCards(card)` - should check whether the given card exists in `displayCards` or not", () => {
+      const wrapper = mount(CardDisplay, { store, localVue });
+      expect(wrapper.vm.existsInDisplayCards(wrapper.vm.displayCard)).toBe(
+        true
+      );
+      expect(
+        wrapper.vm.existsInDisplayCards({ name: "Ancient Gear Golem" })
+      ).toBe(false);
+    });
+
+    it("`fetchPrevDisplayCard()` - should dispatch `$store.FETCH_PREV_DISPLAY_CARD` action", async () => {
+      const wrapper = mount(CardDisplay, { store, localVue });
+
+      wrapper.vm.fetchPrevDisplayCard();
+      expect(actions[FETCH_PREV_DISPLAY_CARD]).toHaveBeenCalledTimes(1);
+      expect(actions[FETCH_PREV_DISPLAY_CARD].mock.calls[0][1]).toEqual(
+        wrapper.vm.displayCard
+      );
+    });
+
+    it("`fetchNextDisplayCard()` - should dispatch `$store.FETCH_NEXT_DISPLAY_CARD` action", async () => {
+      const wrapper = mount(CardDisplay, { store, localVue });
+
+      wrapper.vm.fetchNextDisplayCard();
+      expect(actions[FETCH_NEXT_DISPLAY_CARD]).toHaveBeenCalledTimes(1);
+      expect(actions[FETCH_NEXT_DISPLAY_CARD].mock.calls[0][1]).toEqual(
+        wrapper.vm.displayCard
+      );
+    });
   });
 });
