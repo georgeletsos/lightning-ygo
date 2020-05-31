@@ -1,0 +1,2547 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardCatalogFilters.vue should render correctly 1`] = `
+<div
+  id="catalog-filters"
+>
+  <div
+    class="row row-cols-4 l-gutters mb-2"
+  >
+    <div
+      class="col"
+    >
+      <label
+        class="l-btn l-btn-sm"
+        data-testid="main-deck-monsters"
+        for="main-deck-monsters"
+      >
+        <input
+          class="d-none"
+          id="main-deck-monsters"
+          type="checkbox"
+        />
+         
+        <img
+          alt="Main Deck Monsters"
+          class="img-fluid mr-1 l-card-frame"
+          src=""
+        />
+         
+        <span>
+          Monsters
+        </span>
+      </label>
+    </div>
+    <div
+      class="col"
+    >
+      <label
+        class="l-btn l-btn-sm"
+        data-testid="spells"
+        for="spells"
+      >
+        <input
+          class="d-none"
+          id="spells"
+          type="checkbox"
+        />
+         
+        <img
+          alt="Spells"
+          class="img-fluid mr-1 l-card-frame"
+          src=""
+        />
+         
+        <span>
+          Spells
+        </span>
+      </label>
+    </div>
+    <div
+      class="col"
+    >
+      <label
+        class="l-btn l-btn-sm"
+        data-testid="traps"
+        for="traps"
+      >
+        <input
+          class="d-none"
+          id="traps"
+          type="checkbox"
+        />
+         
+        <img
+          alt="Traps"
+          class="img-fluid mr-1 l-card-frame"
+          src=""
+        />
+         
+        <span>
+          Traps
+        </span>
+      </label>
+    </div>
+    <div
+      class="col"
+    >
+      <label
+        class="l-btn l-btn-sm"
+        data-testid="extra-deck-monsters"
+        for="extra-deck-monsters"
+      >
+        <input
+          class="d-none"
+          id="extra-deck-monsters"
+          type="checkbox"
+        />
+         
+        <img
+          alt="Extra Deck Monsters"
+          class="img-fluid mr-1 l-card-frame"
+          src=""
+        />
+         
+        <div
+          class="d-flex flex-column"
+        >
+          <div>
+            
+            Extra
+          
+          </div>
+          <div>
+            
+            Deck
+          
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+   
+  <form>
+    <div
+      class="row l-gutters mb-2"
+    >
+      <div
+        class="col-3"
+      >
+        <button
+          class="l-btn w-100"
+          data-testid="filter-btn"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="mr-1 svg-inline--fa fa-filter fa-w-16"
+            data-icon="filter"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class=""
+              d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"
+              fill="currentColor"
+            />
+          </svg>
+           
+          <span
+            class="mr-1 d-none d-sm-block"
+          >
+            Filter
+          </span>
+           
+          <span>
+            (19)
+          </span>
+        </button>
+      </div>
+       
+      <div
+        class="col-9"
+      >
+        <label
+          class="l-btn"
+        >
+          <svg
+            aria-hidden="true"
+            class="mr-1 svg-inline--fa fa-search fa-w-16"
+            data-icon="search"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class=""
+              d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+              fill="currentColor"
+            />
+          </svg>
+           
+          <input
+            class="l-form-control"
+            id="l-ygo-text-search"
+            placeholder="Text Search"
+            type="text"
+          />
+        </label>
+      </div>
+    </div>
+     
+    <div
+      class="row l-gutters mb-1"
+    >
+      <div
+        class="col"
+      >
+        <select
+          class="l-form-control custom-select"
+        >
+          <option
+            value="name"
+          >
+            Sort: Name
+          </option>
+          <option
+            value="level"
+          >
+            Sort: Level
+          </option>
+          <option
+            value="atk"
+          >
+            Sort: Atk
+          </option>
+          <option
+            value="def"
+          >
+            Sort: Def
+          </option>
+        </select>
+      </div>
+       
+      <div
+        class="col flex-grow-0"
+      >
+        <button
+          class="l-btn l-icon"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-sort-amount-down-alt fa-w-16 fa-fw"
+            data-icon="sort-amount-down-alt"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class=""
+              d="M240 96h64a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16h-64a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16zm0 128h128a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16H240a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16zm256 192H240a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h256a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm-256-64h192a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16H240a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16zm-64 0h-48V48a16 16 0 0 0-16-16H80a16 16 0 0 0-16 16v304H16c-14.19 0-21.37 17.24-11.29 27.31l80 96a16 16 0 0 0 22.62 0l80-96C197.35 369.26 190.22 352 176 352z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+     
+    <div>
+      <transition-stub
+        enteractiveclass="animated fadeIn faster"
+        leaveactiveclass="animated fadeOut faster"
+      >
+        <div
+          class="l-modal-backdrop"
+          style="display: none;"
+        />
+      </transition-stub>
+       
+      <transition-stub
+        enteractiveclass="animated slideInUp faster"
+        leaveactiveclass="animated slideOutDown faster"
+      >
+        <div
+          class="l-modal"
+          role="dialog"
+          style="display: none;"
+          tabindex="-1"
+        >
+          <div
+            class="modal-dialog modal-dialog-centered"
+            role="document"
+          >
+            <div
+              class="l-modal-content"
+            >
+              <div
+                class="l-modal-header"
+              >
+                <div>
+                  Detailed Filter
+                </div>
+              </div>
+               
+              <div
+                class="l-modal-body"
+              >
+                <div>
+                  <div
+                    class="l-nav l-nav-tabs"
+                  />
+                   
+                  <div
+                    class="l-tab-content"
+                    id="monsters"
+                  >
+                    <div
+                      class="l-filter-group"
+                    >
+                      <div
+                        class="l-filter-group-header"
+                      >
+                        <img
+                          alt="Card Type"
+                          class="img-fluid mr-2 l-card-frame"
+                          src=""
+                        />
+                         
+                        <span>
+                          Card Type
+                        </span>
+                      </div>
+                       
+                      <div
+                        class="l-filter-group-body"
+                      >
+                        <label
+                          class="l-filter mb-2"
+                          for="normal-monster"
+                        >
+                          <input
+                            class="d-none"
+                            id="normal-monster"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Normal
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="effect-monster"
+                        >
+                          <input
+                            class="d-none"
+                            id="effect-monster"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Effect
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="ritual-monster"
+                        >
+                          <input
+                            class="d-none"
+                            id="ritual-monster"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Ritual
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="fusion-monster"
+                        >
+                          <input
+                            class="d-none"
+                            id="fusion-monster"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Fusion
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter"
+                          for="synchro-monster"
+                        >
+                          <input
+                            class="d-none"
+                            id="synchro-monster"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Synchro
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter"
+                          for="token-monster"
+                        >
+                          <input
+                            class="d-none"
+                            id="token-monster"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Token
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                     
+                    <hr
+                      class="l-filter-group-hr"
+                    />
+                     
+                    <div
+                      class="l-filter-group"
+                    >
+                      <div
+                        class="l-filter-group-header"
+                      >
+                        <img
+                          alt="Attribute"
+                          class="img-fluid mr-1 l-card-attr"
+                          src=""
+                        />
+                         
+                        <span>
+                          Attribute
+                        </span>
+                      </div>
+                       
+                      <div
+                        class="l-filter-group-body"
+                      >
+                        <label
+                          class="l-filter mb-2"
+                          for="light-attr"
+                        >
+                          <input
+                            class="d-none"
+                            id="light-attr"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            LIGHT
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="dark-attr"
+                        >
+                          <input
+                            class="d-none"
+                            id="dark-attr"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            DARK
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="water-attr"
+                        >
+                          <input
+                            class="d-none"
+                            id="water-attr"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            WATER
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="fire-attr"
+                        >
+                          <input
+                            class="d-none"
+                            id="fire-attr"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            FIRE
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="earth-attr"
+                        >
+                          <input
+                            class="d-none"
+                            id="earth-attr"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            EARTH
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="wind-attr"
+                        >
+                          <input
+                            class="d-none"
+                            id="wind-attr"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            WIND
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter"
+                          for="divine-attr"
+                        >
+                          <input
+                            class="d-none"
+                            id="divine-attr"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            DIVINE
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                     
+                    <hr
+                      class="l-filter-group-hr"
+                    />
+                     
+                    <div
+                      class="l-filter-group"
+                    >
+                      <div
+                        class="l-filter-group-header"
+                      >
+                        <img
+                          alt="Type"
+                          class="img-fluid mr-1 l-monster-type"
+                          src=""
+                        />
+                         
+                        <span>
+                          Type
+                        </span>
+                      </div>
+                       
+                      <div
+                        class="l-filter-group-body"
+                      >
+                        <label
+                          class="l-filter mb-2"
+                          for="dragon"
+                        >
+                          <input
+                            class="d-none"
+                            id="dragon"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Dragon
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="zombie"
+                        >
+                          <input
+                            class="d-none"
+                            id="zombie"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Zombie
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="fiend"
+                        >
+                          <input
+                            class="d-none"
+                            id="fiend"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Fiend
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="pyro"
+                        >
+                          <input
+                            class="d-none"
+                            id="pyro"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Pyro
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="sea-serpent"
+                        >
+                          <input
+                            class="d-none"
+                            id="sea-serpent"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Sea Serpent
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="rock"
+                        >
+                          <input
+                            class="d-none"
+                            id="rock"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Rock
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="machine"
+                        >
+                          <input
+                            class="d-none"
+                            id="machine"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Machine
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="fish"
+                        >
+                          <input
+                            class="d-none"
+                            id="fish"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Fish
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="dinosaur"
+                        >
+                          <input
+                            class="d-none"
+                            id="dinosaur"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Dinosaur
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="insect"
+                        >
+                          <input
+                            class="d-none"
+                            id="insect"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Insect
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="beast"
+                        >
+                          <input
+                            class="d-none"
+                            id="beast"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Beast
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="beast-warrior"
+                        >
+                          <input
+                            class="d-none"
+                            id="beast-warrior"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Beast-Warrior
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="plant"
+                        >
+                          <input
+                            class="d-none"
+                            id="plant"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Plant
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="aqua"
+                        >
+                          <input
+                            class="d-none"
+                            id="aqua"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Aqua
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="warrior"
+                        >
+                          <input
+                            class="d-none"
+                            id="warrior"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Warrior
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="winged-beast"
+                        >
+                          <input
+                            class="d-none"
+                            id="winged-beast"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Winged Beast
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="fairy"
+                        >
+                          <input
+                            class="d-none"
+                            id="fairy"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Fairy
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="spellcaster"
+                        >
+                          <input
+                            class="d-none"
+                            id="spellcaster"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Spellcaster
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="thunder"
+                        >
+                          <input
+                            class="d-none"
+                            id="thunder"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Thunder
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="reptile"
+                        >
+                          <input
+                            class="d-none"
+                            id="reptile"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Reptile
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="psychic"
+                        >
+                          <input
+                            class="d-none"
+                            id="psychic"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Psychic
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="wyrm"
+                        >
+                          <input
+                            class="d-none"
+                            id="wyrm"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Wyrm
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter"
+                          for="cyberse"
+                        >
+                          <input
+                            class="d-none"
+                            id="cyberse"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Cyberse
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter"
+                          for="divine-beast"
+                        >
+                          <input
+                            class="d-none"
+                            id="divine-beast"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Divine-Beast
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                     
+                    <hr
+                      class="l-filter-group-hr"
+                    />
+                     
+                    <div
+                      class="l-filter-group"
+                    >
+                      <div
+                        class="l-filter-group-header"
+                      >
+                        <img
+                          alt="Level"
+                          class="img-fluid mr-1 l-monster-level"
+                          src=""
+                        />
+                         
+                        <span>
+                          Level
+                        </span>
+                      </div>
+                       
+                      <div
+                        class="l-filter-group-body"
+                      >
+                        <label
+                          class="l-filter mb-2"
+                          for="level-1"
+                        >
+                          <input
+                            class="d-none"
+                            id="level-1"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Level 1
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="level-2"
+                        >
+                          <input
+                            class="d-none"
+                            id="level-2"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Level 2
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="level-3"
+                        >
+                          <input
+                            class="d-none"
+                            id="level-3"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Level 3
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="level-4"
+                        >
+                          <input
+                            class="d-none"
+                            id="level-4"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Level 4
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="level-5"
+                        >
+                          <input
+                            class="d-none"
+                            id="level-5"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Level 5
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="level-6"
+                        >
+                          <input
+                            class="d-none"
+                            id="level-6"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Level 6
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="level-7"
+                        >
+                          <input
+                            class="d-none"
+                            id="level-7"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Level 7
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="level-8"
+                        >
+                          <input
+                            class="d-none"
+                            id="level-8"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Level 8
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="level-9"
+                        >
+                          <input
+                            class="d-none"
+                            id="level-9"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Level 9
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="level-10"
+                        >
+                          <input
+                            class="d-none"
+                            id="level-10"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Level 10
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter"
+                          for="level-11"
+                        >
+                          <input
+                            class="d-none"
+                            id="level-11"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Level 11
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter"
+                          for="level-12"
+                        >
+                          <input
+                            class="d-none"
+                            id="level-12"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Level 12
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                     
+                    <hr
+                      class="l-filter-group-hr"
+                    />
+                     
+                    <div
+                      class="l-filter-group"
+                    >
+                      <div
+                        class="l-filter-group-header"
+                      >
+                        <img
+                          alt="Card Effect"
+                          class="img-fluid mr-1 l-monster-card-effect"
+                          src=""
+                        />
+                         
+                        <span>
+                          Card Effect
+                        </span>
+                      </div>
+                       
+                      <div
+                        class="l-filter-group-body"
+                      >
+                        <label
+                          class="l-filter mb-2"
+                          for="toon"
+                        >
+                          <input
+                            class="d-none"
+                            id="toon"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Toon
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="gemini"
+                        >
+                          <input
+                            class="d-none"
+                            id="gemini"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Gemini
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="union"
+                        >
+                          <input
+                            class="d-none"
+                            id="union"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Union
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="spirit"
+                        >
+                          <input
+                            class="d-none"
+                            id="spirit"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Spirit
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="tuner"
+                        >
+                          <input
+                            class="d-none"
+                            id="tuner"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Tuner
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="flip"
+                        >
+                          <input
+                            class="d-none"
+                            id="flip"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Flip
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter"
+                          for="non-effect"
+                        >
+                          <input
+                            class="d-none"
+                            id="non-effect"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Non-Effect
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  <div
+                    class="l-tab-content"
+                    id="spells-traps"
+                    style="display: none;"
+                  >
+                    <div
+                      class="l-filter-group"
+                    >
+                      <div
+                        class="l-filter-group-header"
+                      >
+                        <img
+                          alt="Spell"
+                          class="img-fluid mr-2 l-card-frame"
+                          src=""
+                        />
+                         
+                        <span>
+                          Spell
+                        </span>
+                      </div>
+                       
+                      <div
+                        class="l-filter-group-body"
+                      >
+                        <label
+                          class="l-filter mb-2"
+                          for="normal-spell"
+                        >
+                          <input
+                            class="d-none"
+                            id="normal-spell"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Normal Spell
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="field-spell"
+                        >
+                          <input
+                            class="d-none"
+                            id="field-spell"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Field Spell
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="equip-spell"
+                        >
+                          <input
+                            class="d-none"
+                            id="equip-spell"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Equip Spell
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="continuous-spell"
+                        >
+                          <input
+                            class="d-none"
+                            id="continuous-spell"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Continuous Spell
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter"
+                          for="quick-play-spell"
+                        >
+                          <input
+                            class="d-none"
+                            id="quick-play-spell"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Quick-Play Spell
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter"
+                          for="ritual-spell"
+                        >
+                          <input
+                            class="d-none"
+                            id="ritual-spell"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Ritual Spell
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                     
+                    <hr
+                      class="l-filter-group-hr"
+                    />
+                     
+                    <div
+                      class="l-filter-group"
+                    >
+                      <div
+                        class="l-filter-group-header"
+                      >
+                        <img
+                          alt="Trap"
+                          class="img-fluid mr-2 l-card-frame"
+                          src=""
+                        />
+                         
+                        <span>
+                          Trap
+                        </span>
+                      </div>
+                       
+                      <div
+                        class="l-filter-group-body"
+                      >
+                        <label
+                          class="l-filter mb-2"
+                          for="normal-trap"
+                        >
+                          <input
+                            class="d-none"
+                            id="normal-trap"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Normal Trap
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter mb-2"
+                          for="counter-trap"
+                        >
+                          <input
+                            class="d-none"
+                            id="counter-trap"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Counter Trap
+                          </span>
+                        </label>
+                        <label
+                          class="l-filter"
+                          for="continuous-trap"
+                        >
+                          <input
+                            class="d-none"
+                            id="continuous-trap"
+                            type="checkbox"
+                          />
+                           
+                          <svg
+                            aria-hidden="true"
+                            class="mr-1 svg-inline--fa fa-circle fa-w-16 fa-lg"
+                            data-icon="circle"
+                            data-prefix="far"
+                            focusable="false"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              class=""
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                           
+                          <span>
+                            Continuous Trap
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               
+              <div
+                class="l-modal-footer"
+              >
+                <button
+                  class="l-btn l-btn-lg mr-2"
+                  type="button"
+                >
+                  Close
+                </button>
+                <button
+                  class="l-btn l-icon l-trash"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-trash-alt fa-w-14 fa-fw"
+                    data-icon="trash-alt"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    viewBox="0 0 448 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class=""
+                      d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition-stub>
+    </div>
+  </form>
+</div>
+`;
