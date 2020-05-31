@@ -37,6 +37,7 @@ import CardDisplay from "@/components/CardDisplay.vue";
 import CardCatalogFilters from "@/components/CardCatalogFilters.vue";
 import CardCatalog from "@/components/CardCatalog.vue";
 import Modal from "@/components/Modal.vue";
+import { debounce } from "lodash-es";
 import { CHANGE_DISPLAY_CARD } from "@/store/actions.type";
 
 export default {
@@ -55,16 +56,24 @@ export default {
   },
 
   created() {
-    if (window.matchMedia("(min-width: 768px)").matches) {
-      this.displayCardOnModal = false;
-      return;
-    }
+    const resizeHandler = () => {
+      this.displayCardOnModal = !window.matchMedia("(min-width: 768px)")
+        .matches;
+    };
+    this.debouncedResizeHandler = debounce(resizeHandler, 150);
+
+    window.addEventListener("resize", this.debouncedResizeHandler);
+    window.dispatchEvent(new Event("resize"));
 
     this.$store.subscribeAction(action => {
       if (action.type === CHANGE_DISPLAY_CARD) {
         this.showDisplayCardModal = true;
       }
     });
+  },
+
+  beforeDestroy() {
+    window.removeEventListener("resize", this.debouncedResizeHandler);
   }
 };
 </script>
