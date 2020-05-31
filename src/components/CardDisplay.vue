@@ -214,7 +214,7 @@ export default {
   },
 
   created() {
-    window.addEventListener("keyup", event => {
+    this.keyupHandler = event => {
       if (["INPUT", "SELECT"].includes(event.target.tagName)) {
         return;
       }
@@ -231,7 +231,13 @@ export default {
         default:
           return;
       }
-    });
+    };
+
+    window.addEventListener("keyup", this.keyupHandler);
+  },
+
+  beforeDestroy() {
+    window.removeEventListener("keyup", this.keyupHandler);
   },
 
   methods: {
