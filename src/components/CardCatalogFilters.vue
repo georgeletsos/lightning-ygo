@@ -69,6 +69,18 @@
               class="l-form-control"
               placeholder="Text Search"
             />
+            <transition
+              enter-active-class="animated fadeIn faster"
+              leave-active-class="animated fadeOut faster"
+            >
+              <font-awesome-icon
+                :icon="faIcons.faTimes"
+                fixed-width
+                data-testid="clear-text-search-btn"
+                v-show="showClearTextSearchBtn"
+                @click="clearTextSearch()"
+              />
+            </transition>
           </label>
         </div>
       </div>
@@ -419,6 +431,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
   faFilter,
   faSearch,
+  faTimes,
   faTrashAlt,
   faSortAmountDownAlt,
   faSortAmountDown
@@ -921,6 +934,7 @@ export default {
       return {
         faFilter,
         faSearch,
+        faTimes,
         faTrashAlt
       };
     },
@@ -1020,12 +1034,14 @@ export default {
         text: "",
         sortField: sortFieldFilters[0].value,
         sortOrder: sortOrderFilters[0].value
-      }
+      },
+      showClearTextSearchBtn: false
     };
   },
 
   watch: {
-    "searchFilters.text"() {
+    "searchFilters.text"(newTextSearch) {
+      this.showClearTextSearchBtn = newTextSearch.length > 0;
       this.submitForm();
     }
   },
@@ -1036,6 +1052,9 @@ export default {
   },
 
   methods: {
+    clearTextSearch() {
+      this.searchFilters.text = "";
+    },
     changeSortOrder() {
       for (const [index, sortOrderFilter] of this.sortOrderFilters.entries()) {
         if (sortOrderFilter.value === this.searchFilters.sortOrder) {
