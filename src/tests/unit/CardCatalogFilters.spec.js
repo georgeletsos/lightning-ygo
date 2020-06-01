@@ -35,34 +35,89 @@ describe("CardCatalogFilters.vue", () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  it("Display Filters UI - should have a different class when active", async () => {
-    const wrapper = mount(CardCatalogFilters, { store, localVue });
+  describe("`data`", () => {
+    it("`displayFilters[x].active` - a display filter button should not have an `active` class", async () => {
+      const wrapper = mount(CardCatalogFilters, { store, localVue });
 
-    const displayFilter = wrapper.vm.displayFilters[2];
-    const displayFilterWrapper = wrapper.find(
-      `label[data-testid="${displayFilter.id}"]`
-    );
-    expect(displayFilterWrapper.classes()).not.toContain("active");
+      const displayFilter = wrapper.vm.displayFilters[2];
+      displayFilter.checked = false;
+      await wrapper.vm.$nextTick();
 
-    displayFilter.active = true;
-    await wrapper.vm.$nextTick();
-    expect(displayFilterWrapper.classes()).toContain("active");
-  });
+      const displayFilterWrapper = wrapper.find(
+        `label[data-testid="${displayFilter.id}"]`
+      );
+      expect(displayFilterWrapper.classes()).not.toContain("active");
+    });
 
-  it("Filter Button UI - should have a different class when `$data.filterBtnActive` is `true`", async () => {
-    const wrapper = mount(CardCatalogFilters, { store, localVue });
+    it("`displayFilters[x].active` - a display filter button should have an `active` class", async () => {
+      const wrapper = mount(CardCatalogFilters, { store, localVue });
 
-    const filterBtnWrapper = wrapper.find(`[data-testid="filter-btn"]`);
-    expect(filterBtnWrapper.classes()).not.toContain("active");
+      const displayFilter = wrapper.vm.displayFilters[2];
+      displayFilter.active = true;
+      await wrapper.vm.$nextTick();
 
-    wrapper.vm.filterBtnActive = true;
-    await wrapper.vm.$nextTick();
-    expect(filterBtnWrapper.classes()).toContain("active");
+      const displayFilterWrapper = wrapper.find(
+        `label[data-testid="${displayFilter.id}"]`
+      );
+      expect(displayFilterWrapper.classes()).toContain("active");
+    });
+
+    it("`filterBtnActive` - the filter button should not have an `active` class", async () => {
+      const wrapper = mount(CardCatalogFilters, { store, localVue });
+
+      wrapper.vm.filterBtnActive = false;
+      await wrapper.vm.$nextTick();
+
+      expect(
+        wrapper.find(`[data-testid="filter-btn"]`).classes()
+      ).not.toContain("active");
+    });
+
+    it("`filterBtnActive` - the filter button should have an `active` class", async () => {
+      const wrapper = mount(CardCatalogFilters, { store, localVue });
+
+      wrapper.vm.filterBtnActive = true;
+      await wrapper.vm.$nextTick();
+
+      expect(wrapper.find(`[data-testid="filter-btn"]`).classes()).toContain(
+        "active"
+      );
+    });
+
+    it("`showClearTextSearchBtn` - the clear text search button should be hidden", async () => {
+      const wrapper = mount(CardCatalogFilters, { store, localVue });
+
+      wrapper.vm.showClearTextSearchBtn = false;
+      await wrapper.vm.$nextTick();
+
+      expect(
+        wrapper.find(`[data-testid="clear-text-search-btn"]`).isVisible()
+      ).toBe(false);
+    });
+
+    it("`showClearTextSearchBtn` - the clear text search button should be visible", async () => {
+      const wrapper = mount(CardCatalogFilters, { store, localVue });
+
+      wrapper.vm.showClearTextSearchBtn = true;
+      await wrapper.vm.$nextTick();
+
+      expect(
+        wrapper.find(`[data-testid="clear-text-search-btn"]`).isVisible()
+      ).toBe(true);
+    });
   });
 
   describe("`methods`", () => {
     beforeEach(() => {
       jest.clearAllMocks();
+    });
+
+    it("`clearTextSearch()` - should clear the text search", () => {
+      const wrapper = mount(CardCatalogFilters, { store, localVue });
+
+      wrapper.vm.searchFilters.text = "Cyber Dragon";
+      wrapper.vm.clearTextSearch();
+      expect(wrapper.vm.searchFilters.text).toBe("");
     });
 
     it("`changeSortOrder()` - should switch the sort order values and icons", () => {
