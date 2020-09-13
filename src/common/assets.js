@@ -27,7 +27,7 @@ export const lightAttrIcon = require("@/assets/card_attributes/card_attribute_li
 export const waterAttrIcon = require("@/assets/card_attributes/card_attribute_water.png");
 export const windAttrIcon = require("@/assets/card_attributes/card_attribute_wind.png");
 
-export const getMonsterAttributeIcon = function(attr) {
+export const getMonsterAttributeIcon = attr => {
   switch (attr) {
     case "dark":
       return darkAttrIcon;
@@ -74,7 +74,7 @@ export const wingedBeastTypeIcon = require("@/assets/monster_types/monster_type_
 export const wyrmTypeIcon = require("@/assets/monster_types/monster_type_wyrm.png");
 export const zombieTypeIcon = require("@/assets/monster_types/monster_type_zombie.png");
 
-export const getMonsterTypeIcon = function(monsterType) {
+export const getMonsterTypeIcon = monsterType => {
   switch (monsterType) {
     case "aqua":
       return aquaTypeIcon;
@@ -140,7 +140,7 @@ export const ritualSpellIcon = require("@/assets/st_types/spell_type_ritual.png"
 export const continuousStIcon = require("@/assets/st_types/st_type_continuous.png");
 export const counterTrapIcon = require("@/assets/st_types/trap_type_counter.png");
 
-export const getStTypeIcon = function(stType) {
+export const getStTypeIcon = stType => {
   switch (stType) {
     case "equip":
       return equipSpellIcon;

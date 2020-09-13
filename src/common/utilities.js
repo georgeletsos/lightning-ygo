@@ -1,23 +1,23 @@
-export const cloneObject = function(object) {
+export const cloneObject = object => {
   return JSON.parse(JSON.stringify(object));
 };
 
-export const isMonsterCard = function(card) {
+export const isMonsterCard = card => {
   return card.cardType === "monster";
 };
 
-export const isTunerMonsterCard = function(card) {
+export const isTunerMonsterCard = card => {
   return card.types.includes("tuner");
 };
 
-export const isSpellCard = function(card) {
+export const isSpellCard = card => {
   return card.cardType === "spell";
 };
 
-export const isTrapCard = function(card) {
+export const isTrapCard = card => {
   return card.cardType === "trap";
 };
 
-export const isStNormal = function(card) {
+export const isStNormal = card => {
   return card.types[0] === "normal";
 };
