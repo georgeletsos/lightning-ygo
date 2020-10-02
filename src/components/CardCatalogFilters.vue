@@ -468,7 +468,7 @@ const displayFilters = [
     alt: "Main Deck Monsters",
     text: "Monsters",
     cardType: "monster",
-    excludedTypes: ["fusion", "synchro"]
+    excludedTypes: ["fusion", "synchro", "xyz"]
   },
   {
     id: "spells",
@@ -493,7 +493,7 @@ const displayFilters = [
     alt: "Extra Deck Monsters",
     text: "Extra Deck",
     cardType: "monster",
-    includedTypes: ["fusion", "synchro"]
+    includedTypes: ["fusion", "synchro", "xyz"]
   }
 ];
 
@@ -526,6 +526,12 @@ const monsterCardTypeFilters = [
     id: "synchro-monster",
     type: "synchro",
     text: "Synchro",
+    checked: false
+  },
+  {
+    id: "xyz-monster",
+    type: "xyz",
+    text: "Xyz",
     checked: false
   },
   {
